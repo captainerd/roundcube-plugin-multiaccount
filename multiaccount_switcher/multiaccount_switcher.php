@@ -1,5 +1,13 @@
 <?php
-// multiaccount_switcher.php
+/**
+ * MultiAccount Switcher Roundcube Plugin
+ *
+ * Maintained by: CaptaiNerd (natsos@velecron.net)
+ * GitHub: https://github.com/captainerd/roundcube-plugin-multiaccount
+ *
+ * Adds multi-account management and persistent login features.
+ *
+ */
      require_once __DIR__ . '/libs/utils.php';
 class multiaccount_switcher extends rcube_plugin
 {
