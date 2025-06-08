@@ -37,4 +37,4 @@ Easy peasy:
   ```bash
   git clone http://github.com/captainerd/roundcube-plugin-multiaccount plugins/multiaccount_switcher
 # roundcube-plugin-multiaccount
-# roundcube-plugin-multiaccount
+ 
