@@ -1,0 +1,28 @@
+<div class="modal fade" id="addAccountModal" tabindex="-1" role="dialog" aria-labelledby="addAccountLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <form id="addAccountForm">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addAccountLabel"><i class="fas fa-user-plus"></i> Add Account</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="addAccountUsername">Username / Email</label>
+            <input type="text" class="form-control" id="addAccountUsername" name="username" required />
+          </div>
+          <div class="form-group">
+            <label for="addAccountPassword">Password</label>
+            <input type="password" class="form-control" id="addAccountPassword" name="password" required />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary"><i class="fas fa-user-plus"></i> Save</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

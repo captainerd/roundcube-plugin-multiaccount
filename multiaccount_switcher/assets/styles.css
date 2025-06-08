@@ -1,0 +1,66 @@
+/* Light mode (default) */
+.modal-content {
+  background-color: #fff; /* Bootstrap default modal background */
+  color: #212529;         /* Bootstrap body text color */
+}
+
+.modal-header .fa-cog {
+  color: currentColor;    /* icon inherits text color */
+}
+
+/* Dark mode */
+html.dark-mode .modal-content {
+  background-color: #343a40; /* Bootstrap dark modal bg */
+  color: #f8f9fa;            /* Bootstrap light text */
+  border-color: #454d55;     /* Darker border */
+}
+
+html.dark-mode .modal-header,
+html.dark-mode .modal-footer {
+  border-color: #454d55;
+}
+
+html.dark-mode .btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: #fff;
+}
+
+html.dark-mode .btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: #fff;
+}
+
+/* Keep icon color in sync */
+html.dark-mode .modal-header .fa-cog {
+  color: currentColor;
+}
+
+
+
+.account-row {
+  border: 1px solid #dee2e6; /* Bootstrap light gray border */
+  border-radius: 4px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--bs-body-bg, #fff); /* adapt to light/dark */
+  transition: background-color 0.3s ease;
+}
+
+.account-row:hover {
+  background-color: #f8f9fa; /* subtle hover effect */
+}
+
+/* For dark mode (adjust if you have html.dark-mode or body.dark) */
+html.dark-mode .account-row {
+  border-color: #454d55;
+  background-color: #2a2f35;
+}
+
+html.dark-mode .account-row:hover {
+  background-color: #3a3f45;
+}
