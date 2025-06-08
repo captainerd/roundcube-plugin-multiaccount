@@ -8,7 +8,7 @@
  * Adds multi-account management and persistent login features.
  *
  */
-     require_once __DIR__ . '/libs/utils.php';
+require_once __DIR__ . '/libs/utils.php';
 class multiaccount_switcher extends rcube_plugin
 {
     public $task = 'login|mail'; // Hook into login and mail tasks
@@ -21,15 +21,15 @@ class multiaccount_switcher extends rcube_plugin
         $this->add_hook('authenticate', [$this, 'on_authenticate']);
         $this->add_hook('startup', [$this, 'on_startup']);
         $this->add_hook('logout_before', [$this, 'on_logout']);
-     
+
         $this->register_action('plugin.multiaccount_switcher.validate_account', [$this, 'validate_account']);
         $this->register_action('plugin.multiaccount_switcher.deleteConnection', [$this, 'delete_connection']);
 
 
         $this->include_stylesheet('assets/styles.css'); // Imaginary custom css
 
-        $this->include_stylesheet('assets/fa-icons/all.min.css');  
- 
+        $this->include_stylesheet('assets/fa-icons/all.min.css');
+
         $rcmail = rcube::get_instance();
         $this->key = $rcmail->config->get('des_key');
 
@@ -60,7 +60,7 @@ class multiaccount_switcher extends rcube_plugin
         $this->create_table_if_missing(); // Make sure tables exists.
 
         $this->load_config();
-        
+
         $this->include_script('assets/logintoggle.js'); // Adds the remember me toggle to login
     }
     public function on_logout($args)
@@ -97,7 +97,7 @@ class multiaccount_switcher extends rcube_plugin
         $row = $db->fetch_assoc($result);
 
         if ($row && !empty($row['encrypted_password'])) {
-       
+
             return decrypt_password($row['encrypted_password'], $this->key);
         }
         return '';
@@ -111,11 +111,11 @@ class multiaccount_switcher extends rcube_plugin
 
         $connection = get_current_username();
         if ($email == $connection) {
-                send_json_response([
-                    'status' => 'error',
-                    'message' => "You can not delete the account you're logged in with."
-                ]);
-                return;
+            send_json_response([
+                'status' => 'error',
+                'message' => "You can not delete the account you're logged in with."
+            ]);
+            return;
         }
 
         if (empty($email) || empty($connection)) {
@@ -125,7 +125,7 @@ class multiaccount_switcher extends rcube_plugin
             ]);
         }
 
-      $sql = "DELETE FROM {$this->table}_connections 
+        $sql = "DELETE FROM {$this->table}_connections 
         WHERE (user1 = ? AND user2 = ?) 
            OR (user1 = ? AND user2 = ?)";
 
@@ -275,7 +275,7 @@ class multiaccount_switcher extends rcube_plugin
         $user1 = strtolower(trim($user1));
         $user2 = strtolower(trim($user2));
         // Encrypt the password 
-   
+
         $encrypted = encrypt_password($password, $this->key);
 
         // Insert or update the user2 credentials in main table to satisfy foreign key constraint
@@ -296,7 +296,7 @@ class multiaccount_switcher extends rcube_plugin
         }
     }
 
-  
+
 
     private function create_table_if_missing()
     {
@@ -328,7 +328,7 @@ class multiaccount_switcher extends rcube_plugin
         }
 
     }
- 
+
 
     // Add dropdown switcher replacing the email in sidebar
 
@@ -363,7 +363,8 @@ class multiaccount_switcher extends rcube_plugin
         $rcmail = rcube::get_instance();
 
         $cookie = $_COOKIE['multiaccount_session'] ?? null;
-        if (!empty($cookie)) {
+        if (!empty($cookie) && (empty($args['user']) || empty($args['pass']))) {
+
 
             $db = $rcmail->get_dbh();
             $sql = "SELECT username, encrypted_password FROM {$this->table} WHERE sessionhash = ?";
@@ -372,17 +373,14 @@ class multiaccount_switcher extends rcube_plugin
 
             if ($row) {
                 $username = $row['username'];
-           
-                $password = decrypt_password($row['encrypted_password'], $this->key);
 
+                $password = decrypt_password($row['encrypted_password'], $this->key);
 
                 $args['host'] = $rcmail->config->get('imap_host');
                 $args['user'] = $username;
                 $args['pass'] = $password;
 
                 return $args;
-
-                exit;
             }
         }
 
@@ -424,7 +422,7 @@ class multiaccount_switcher extends rcube_plugin
             }
         }
     }
- 
+
 
 
 }
