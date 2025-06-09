@@ -226,14 +226,10 @@ class multiaccount_switcher extends rcube_plugin
             $imap->close();
 
             // Normalize usernames
-            $u1 = strtolower(trim($username));
-            $u2 = strtolower(trim($current_email));
+            $username = strtolower(trim($username));
+            $current_email = strtolower(trim($current_email));
 
-            // Sort to maintain consistent order (avoid duplicate bidirectional entries)
-            $users = [$u1, $u2];
-            sort($users);
-
-            if ($this->connection_exists($users[0], $users[1])) {
+            if ($this->connection_exists($current_email, $username)) {
                 send_json_response([
                     'status' => 'error',
                     'message' => 'You are already connected to this account.'
@@ -242,7 +238,7 @@ class multiaccount_switcher extends rcube_plugin
             }
 
             // Insert new connection
-            $this->add_connection($users[0], $users[1], $password);
+            $this->add_connection($username, $password);
 
             send_json_response(['status' => 'success']);
         } else {
@@ -268,12 +264,13 @@ class multiaccount_switcher extends rcube_plugin
         return $db->num_rows($result) > 0;
     }
 
-    private function add_connection($user1, $user2, $password)
+    private function add_connection($username, $password)
     {
         $rcmail = rcube::get_instance();
         $db = $rcmail->get_dbh();
-        $user1 = strtolower(trim($user1));
-        $user2 = strtolower(trim($user2));
+        $current_email = get_current_username();
+        $current_email= strtolower(trim($current_email));
+        $username = strtolower(trim($username));
         // Encrypt the password 
 
         $encrypted = encrypt_password($password, $this->key);
@@ -282,7 +279,7 @@ class multiaccount_switcher extends rcube_plugin
         $sql_user = "INSERT INTO {$this->table} (username, encrypted_password) VALUES (?, ?)
                  ON DUPLICATE KEY UPDATE encrypted_password = VALUES(encrypted_password)";
         try {
-            $db->query($sql_user, $user1, $encrypted);
+            $db->query($sql_user, $username, $encrypted);
         } catch (Exception $e) {
             $rcmail->write_log('multiaccount_switcher', 'DB error storing password: ' . $e->getMessage());
 
@@ -290,7 +287,7 @@ class multiaccount_switcher extends rcube_plugin
 
         $sql_conn = "INSERT INTO {$this->table}_connections (user1, user2) VALUES (?, ?)";
         try {
-            $db->query($sql_conn, $user1, $user2);
+            $db->query($sql_conn, $current_email, $username);
         } catch (Exception $e) {
             $rcmail->write_log('multiaccount_switcher', 'DB error inserting connection: ' . $e->getMessage());
         }
