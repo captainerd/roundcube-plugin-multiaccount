@@ -18,14 +18,7 @@ class multiaccount_switcher extends rcube_plugin
     function init()
     {
 
-        $this->add_hook('authenticate', [$this, 'on_authenticate']);
-        $this->add_hook('startup', [$this, 'on_startup']);
-        $this->add_hook('logout_before', [$this, 'on_logout']);
-
-        $this->register_action('plugin.multiaccount_switcher.validate_account', [$this, 'validate_account']);
-        $this->register_action('plugin.multiaccount_switcher.deleteConnection', [$this, 'delete_connection']);
-
-
+ 
         $this->include_stylesheet('assets/styles.css'); // Imaginary custom css
 
         $this->include_stylesheet('assets/fa-icons/all.min.css');
@@ -53,13 +46,23 @@ class multiaccount_switcher extends rcube_plugin
         // AccountSwitching related.
 
         $switcher = new AccountSwitcher($this, $this->table, $this->key);
-        $this->add_hook('render_page', [$switcher, 'add_account_switcher']);
-        $this->register_action('plugin.multiaccount_switcher.switch', [$switcher, 'switch_account']);
 
 
         $this->create_table_if_missing(); // Make sure tables exists.
 
         $this->load_config();
+        
+        $this->add_hook('render_page', [$switcher, 'add_account_switcher']);
+        $this->register_action('plugin.multiaccount_switcher.switch', [$switcher, 'switch_account']);
+        $this->add_hook('authenticate', [$this, 'on_authenticate']);
+        $this->add_hook('startup', [$this, 'on_startup']);
+        $this->add_hook('logout_before', [$this, 'on_logout']);
+
+        $this->register_action('plugin.multiaccount_switcher.validate_account', [$this, 'validate_account']);
+        $this->register_action('plugin.multiaccount_switcher.deleteConnection', [$this, 'delete_connection']);
+
+
+ 
 
         $this->include_script('assets/logintoggle.js'); // Adds the remember me toggle to login
     }

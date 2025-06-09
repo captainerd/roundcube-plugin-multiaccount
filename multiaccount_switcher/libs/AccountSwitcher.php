@@ -6,7 +6,7 @@ class AccountSwitcher extends multiaccount_switcher
     protected $plugin;
     protected $db;
     protected $table;
-   protected  $rcmail;
+    protected $rcmail;
     protected $key;
 
     public function __construct($plugin = null, $table = null, $key = null)
@@ -20,6 +20,11 @@ class AccountSwitcher extends multiaccount_switcher
 
     public function add_account_switcher($args)
     {
+
+        if ($args['template'] != 'mail') {
+            return $args;
+        }
+
         $this->plugin->include_script('assets/account_switcher.js');
 
         $current_email = get_current_username();
@@ -87,7 +92,7 @@ class AccountSwitcher extends multiaccount_switcher
             . json_encode($config, JSON_HEX_TAG | JSON_UNESCAPED_SLASHES)
             . ';</script>';
 
-            
+
         $args['content'] = str_replace('</body>', $js_config . '</body>', $args['content']);
 
         return $args;
