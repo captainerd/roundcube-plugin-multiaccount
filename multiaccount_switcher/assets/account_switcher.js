@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (!window.AccountSwitcherConfig) {
     return;
   }
+  rcmail.refresh_list();
   const { csrfToken, currentEmail, switchUrl, deleteUrl, rootUrl } = window.AccountSwitcherConfig;
 
   // Handle add account form submit
@@ -76,7 +77,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         document.body.appendChild(form);
         form.submit();
+ 
+        
       }
+
     });
   }
 
