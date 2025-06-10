@@ -9,14 +9,19 @@ class AccountSwitcher extends multiaccount_switcher
     protected $rcmail;
     protected $key;
 
-    public function __construct($plugin = null, $table = null, $key = null)
+    protected $utils;
+
+    public function __construct($plugin = null,   $key = null, $utils = null)
     {
         $this->plugin = $plugin;
-        $this->table = $table;
+ 
         $this->key = $key;
         $this->rcmail = rcmail::get_instance();
         $this->db = $this->rcmail->get_dbh();
+        $this->utils = $utils;
     }
+
+    // Add dropdown switcher replacing the email in sidebar
 
     public function add_account_switcher($args)
     {
@@ -27,13 +32,13 @@ class AccountSwitcher extends multiaccount_switcher
 
         $this->plugin->include_script('assets/account_switcher.js');
 
-        $current_email = get_current_username();
+        $current_email = $this->utils->get_current_username();
         if (!$current_email) {
             return $args;
         }
 
         $connections = $this->get_connected_users($current_email);
-
+       
         $accounts = [
             $current_email => rcube_user::user2email($current_email, true) ?? $current_email,
         ];
@@ -106,16 +111,13 @@ class AccountSwitcher extends multiaccount_switcher
             return;
         }
 
-        $sql = "SELECT encrypted_password FROM {$this->table} WHERE username = ?";
-        $result = $this->db->query($sql, $username);
-        $row = $this->db->fetch_assoc($result);
+        $password = $this->utils->get_decrypted_password_for_user($username, $this->key);
 
-        if (!$row) {
+        
+        if (!isset($password)) {
             $this->rcmail->output->command('display_message', 'Account password missing', 'error');
             return;
         }
-
-        $password = decrypt_password($row['encrypted_password'], $this->key);
 
         if ($this->rcmail->login($username, $password)) {
             header('Location: ' . $this->rcmail->url(['_task' => 'mail']));
@@ -125,31 +127,20 @@ class AccountSwitcher extends multiaccount_switcher
         }
     }
 
-    private function get_connected_users($current_email)
+    public function get_connected_users(string $current_email): array
     {
-        $rcmail = rcube::get_instance();
-        $db = $rcmail->get_dbh();
+        $current_email = strtolower(trim($current_email));
+        $connections = $this->utils->get_connections();
 
-        $current_email = strtolower(trim($db->escapeSimple($current_email)));
-
-        $sql = "SELECT user1, user2 FROM {$this->table}_connections 
-            WHERE user1 = ? OR user2 = ?";
-
-        $result = $db->query($sql, $current_email, $current_email);
         $connected = [];
-
-        if ($result) {
-            while ($row = $db->fetch_assoc($result)) {
-                // Add the user connected to current_email, excluding current_email itself
-                if ($row['user1'] !== $current_email) {
-                    $connected[] = $row['user1'];
-                }
-                if ($row['user2'] !== $current_email) {
-                    $connected[] = $row['user2'];
-                }
+        foreach ($connections as $user) {
+            $user = strtolower(trim($user));
+            if ($user !== $current_email) {
+                $connected[] = $user;
             }
         }
-        // Remove duplicates (in case of symmetrical entries)
+
         return array_values(array_unique($connected));
     }
+
 }
