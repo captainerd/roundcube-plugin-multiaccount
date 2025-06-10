@@ -1,7 +1,7 @@
 <?php
 
 /**
- * MultiAccount Switcher Roundcube Plugin
+ * MultiAccount Switcher Roundcube Plugin v2
  *
  * Maintained by: CaptaiNerd (natsos@velecron.net)
  * GitHub: https://github.com/captainerd/roundcube-plugin-multiaccount
@@ -20,8 +20,7 @@ class multiaccount_switcher extends rcube_plugin
     function init()
     {
 
-        // $this->drop_tables();  Use this once, to clean the db in case of upgrades/uninstall
-
+   
         $this->include_stylesheet('assets/styles.css'); // Imaginary custom css
 
         $this->include_stylesheet('assets/fa-icons/all.min.css');
@@ -38,7 +37,7 @@ class multiaccount_switcher extends rcube_plugin
         require_once __DIR__ . '/libs/utils.php';
         // AccountSwitching related.
         $this->utils = new Utils($this->key);
-        $switcher = new AccountSwitcher($this,   $this->key, $this->utils);
+        $switcher = new AccountSwitcher($this, $this->key, $this->utils);
 
         $this->load_config();
 
@@ -51,7 +50,7 @@ class multiaccount_switcher extends rcube_plugin
         $this->register_action('plugin.multiaccount_switcher.validate_account', [$this, 'validate_account']);
         $this->register_action('plugin.multiaccount_switcher.deleteConnection', [$this, 'delete_connection']);
 
-   
+
         $this->include_script('assets/logintoggle.js'); // Adds the remember me toggle to login
     }
     public function on_logout($args)
@@ -63,55 +62,68 @@ class multiaccount_switcher extends rcube_plugin
             unset($_COOKIE['multiaccount_session']);
         }
         return $args;
-    } 
+    }
 
     public function delete_connection()
     {
-        $rcmail = rcube::get_instance();
-        $db = $rcmail->get_dbh();
-
         $email = strtolower(trim(rcube_utils::get_input_value('email', rcube_utils::INPUT_POST)));
+        $current_user = strtolower(trim($this->utils->get_current_username()));
 
-        $connection = $this->utils->get_current_username();
-        if ($email == $connection) {
+        if ($email === $current_user) {
             $this->utils->send_json_response([
                 'status' => 'error',
-                'message' => "You can not delete the account you're logged in with."
+                'message' => "You cannot delete the account you're logged in with."
             ]);
             return;
         }
 
-        if (empty($email) || empty($connection)) {
+        if (empty($email) || empty($current_user)) {
             $this->utils->send_json_response([
                 'status' => 'error',
                 'message' => 'Missing parameters'
             ]);
+            return;
         }
 
-        $sql = "DELETE FROM {$this->table}_connections 
-        WHERE (user1 = ? AND user2 = ?) 
-           OR (user1 = ? AND user2 = ?)";
+        $connections = $this->utils->get_connections();
 
-        try {
-            $result = $db->query($sql, $email, $connection, $connection, $email);
+        // Remove the target email from connections
+        $new_connections = [];
+        $found = false;
 
-            if ($result->rowCount() > 0) {
-                $this->utils->send_json_response(['status' => 'success', 'message' => 'Accounted decoupled succesfully']);
-            } else {
-                $this->utils->send_json_response([
-                    'status' => 'error',
-                    'message' => 'Connection not found'
-                ]);
+        foreach ($connections as $conn_email) {
+            if (strtolower(trim($conn_email)) === $email) {
+                $found = true;
+                continue; // skip this one, delete it
             }
-        } catch (Exception $e) {
-            $rcmail->write_log('multiaccount_switcher', 'DB error deleting connection: ' . $e->getMessage());
+            $new_connections[] = $conn_email;
+        }
 
+        if (!$found) {
             $this->utils->send_json_response([
                 'status' => 'error',
-                'message' => 'Database error'
+                'message' => 'Connection not found'
             ]);
+            return;
         }
+
+        $data = ['connections' => $new_connections];
+        $json = json_encode($data);
+        $encrypted = $this->utils->encrypt_password($json, $this->key);  // Assuming encrypt_password works for general data
+        $cookie_value = base64_encode($encrypted);
+
+        $this->utils->set_persistent_cookie(
+            'multiaccount_connections',
+            $cookie_value,
+            time() + (10 * 365 * 24 * 60 * 60)
+        );
+
+        $this->utils->send_json_response([
+            'status' => 'success',
+            'message' => 'Account decoupled successfully'
+        ]);
     }
+
 
 
     public function validate_account()
