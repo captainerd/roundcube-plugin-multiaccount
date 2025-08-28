@@ -20,7 +20,7 @@ class multiaccount_switcher extends rcube_plugin
     function init()
     {
 
-   
+
         $this->include_stylesheet('assets/styles.css'); // Imaginary custom css
 
         $this->include_stylesheet('assets/fa-icons/all.min.css');
@@ -128,9 +128,9 @@ class multiaccount_switcher extends rcube_plugin
 
     public function validate_account()
     {
-
         $rcmail = rcube::get_instance();
 
+        // Get input
         $username = rcube_utils::get_input_value('username', rcube_utils::INPUT_POST);
         $password = rcube_utils::get_input_value('password', rcube_utils::INPUT_POST);
 
@@ -152,13 +152,14 @@ class multiaccount_switcher extends rcube_plugin
             return;
         }
 
+        // IMAP host & port detection
         $imap_host_config = $rcmail->config->get('imap_host');
         $default_port = $rcmail->config->get('default_port') ?: 143;
         $imap_ssl = '';
         $host = $imap_host_config;
 
         if (preg_match('#^(ssl|tls)://#i', $imap_host_config, $matches)) {
-            $imap_ssl = '/' . strtolower($matches[1]);
+            $imap_ssl = strtolower($matches[1]); // 'ssl' or 'tls'
             $host = preg_replace('#^(ssl|tls)://#i', '', $imap_host_config);
         }
 
@@ -167,16 +168,16 @@ class multiaccount_switcher extends rcube_plugin
             $imap_port = (int) $imap_port;
         } else {
             $imap_host = $host;
-            $imap_port = $default_port;
+            $imap_port = $imap_ssl === 'ssl' ? 993 : ($imap_ssl === 'tls' ? 143 : $default_port);
         }
 
         $imap = new rcube_imap();
 
-        // Capture any PHP warnings as fatal errors for debugging
+        // Capture PHP warnings as errors
         $error_msg = null;
         set_error_handler(function ($errno, $errstr) use (&$error_msg) {
             $error_msg = $errstr;
-            return true; // prevent default PHP handler
+            return true;
         });
 
         try {
@@ -223,6 +224,7 @@ class multiaccount_switcher extends rcube_plugin
             ]);
         }
     }
+
 
     private function add_connection($username, $password)
     {
