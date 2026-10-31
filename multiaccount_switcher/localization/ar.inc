@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'الحسابات';
+$labels['manage_accounts'] = 'إدارة الحسابات';
+$labels['add_account'] = 'إضافة حساب';
+$labels['username_email'] = 'اسم المستخدم / البريد الإلكتروني';
+$labels['password'] = 'كلمة المرور';
+$labels['save'] = 'حفظ';
+$labels['cancel'] = 'إلغاء';
+$labels['close'] = 'إغلاق';
+$labels['remember_me'] = 'تذكرني';
+$labels['confirm_delete'] = 'هل تريد حذف الحساب $email؟';
+$labels['msg_added'] = 'تم التحقق من الحساب وإضافته';
+$labels['msg_removed'] = 'تمت إزالة الحساب';
+$labels['err_delete_current'] = 'لا يمكنك حذف الحساب الذي سجلت الدخول به.';
+$labels['err_missing_params'] = 'معلمات مفقودة';
+$labels['err_not_found'] = 'لم يتم العثور على الحساب';
+$labels['err_missing_credentials'] = 'أدخل اسم المستخدم وكلمة المرور';
+$labels['err_already_self'] = 'أنت مسجل الدخول بهذا الحساب بالفعل.';
+$labels['err_exception'] = 'خطأ: ';
+$labels['err_connection'] = 'خطأ في الاتصال: ';
+$labels['err_already_connected'] = 'تمت إضافة هذا الحساب بالفعل.';
+$labels['err_invalid_credentials'] = 'اسم المستخدم أو كلمة المرور غير صحيحة';
+$labels['err_no_account'] = 'لم يتم تحديد حساب';
+$labels['err_password_missing'] = 'لم يتم العثور على كلمة مرور الحساب';
+$labels['err_switch_failed'] = 'تعذر تبديل الحساب';
+$labels['err_validation'] = 'فشل التحقق';
+$labels['err_request'] = 'فشل الطلب. حاول مرة أخرى.';

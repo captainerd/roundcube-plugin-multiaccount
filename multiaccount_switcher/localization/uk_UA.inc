@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'Облікові записи';
+$labels['manage_accounts'] = 'Керування обліковими записами';
+$labels['add_account'] = 'Додати обліковий запис';
+$labels['username_email'] = 'Ім\'я користувача / Електронна адреса';
+$labels['password'] = 'Пароль';
+$labels['save'] = 'Зберегти';
+$labels['cancel'] = 'Скасувати';
+$labels['close'] = 'Закрити';
+$labels['remember_me'] = 'Запам’ятати мене';
+$labels['confirm_delete'] = 'Видалити обліковий запис $email?';
+$labels['msg_added'] = 'Обліковий запис перевірено й додано';
+$labels['msg_removed'] = 'Обліковий запис видалено';
+$labels['err_delete_current'] = 'Не можна видалити обліковий запис, під яким ви увійшли.';
+$labels['err_missing_params'] = 'Бракує параметрів';
+$labels['err_not_found'] = 'Обліковий запис не знайдено';
+$labels['err_missing_credentials'] = 'Введіть ім’я користувача та пароль';
+$labels['err_already_self'] = 'Ви вже увійшли під цим обліковим записом.';
+$labels['err_exception'] = 'Помилка: ';
+$labels['err_connection'] = 'Помилка з’єднання: ';
+$labels['err_already_connected'] = 'Цей обліковий запис уже додано.';
+$labels['err_invalid_credentials'] = 'Неправильне ім’я користувача або пароль';
+$labels['err_no_account'] = 'Обліковий запис не вказано';
+$labels['err_password_missing'] = 'Пароль облікового запису не знайдено';
+$labels['err_switch_failed'] = 'Не вдалося перемкнути обліковий запис';
+$labels['err_validation'] = 'Перевірку не пройдено';
+$labels['err_request'] = 'Запит не виконано. Спробуйте ще раз.';

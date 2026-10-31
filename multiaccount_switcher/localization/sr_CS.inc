@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'Налози';
+$labels['manage_accounts'] = 'Управљање налозима';
+$labels['add_account'] = 'Додај налог';
+$labels['username_email'] = 'Корисничко име / Е-пошта';
+$labels['password'] = 'Лозинка';
+$labels['save'] = 'Сачувај';
+$labels['cancel'] = 'Одустани';
+$labels['close'] = 'Затвори';
+$labels['remember_me'] = 'Запамти ме';
+$labels['confirm_delete'] = 'Обрисати налог $email?';
+$labels['msg_added'] = 'Налог је проверен и додат';
+$labels['msg_removed'] = 'Налог је уклоњен';
+$labels['err_delete_current'] = 'Не можете обрисати налог са којим сте пријављени.';
+$labels['err_missing_params'] = 'Недостају параметри';
+$labels['err_not_found'] = 'Налог није пронађен';
+$labels['err_missing_credentials'] = 'Унесите корисничко име и лозинку';
+$labels['err_already_self'] = 'Већ сте пријављени са овим налогом.';
+$labels['err_exception'] = 'Грешка: ';
+$labels['err_connection'] = 'Грешка при повезивању: ';
+$labels['err_already_connected'] = 'Овај налог је већ додат.';
+$labels['err_invalid_credentials'] = 'Неисправно корисничко име или лозинка';
+$labels['err_no_account'] = 'Налог није наведен';
+$labels['err_password_missing'] = 'Лозинка налога није пронађена';
+$labels['err_switch_failed'] = 'Промена налога није успела';
+$labels['err_validation'] = 'Провера није успела';
+$labels['err_request'] = 'Захтев није успео. Покушајте поново.';

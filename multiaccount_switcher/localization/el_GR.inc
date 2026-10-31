@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'Λογαριασμοί';
+$labels['manage_accounts'] = 'Διαχείριση λογαριασμών';
+$labels['add_account'] = 'Προσθήκη λογαριασμού';
+$labels['username_email'] = 'Όνομα Χρήστη / E-Mail';
+$labels['password'] = 'Κωδικός Πρόσβασης';
+$labels['save'] = 'Αποθήκευση';
+$labels['cancel'] = 'Ακύρωση';
+$labels['close'] = 'Κλείσιμο';
+$labels['remember_me'] = 'Να με θυμάσαι';
+$labels['confirm_delete'] = 'Διαγραφή του λογαριασμού $email;';
+$labels['msg_added'] = 'Ο λογαριασμός επαληθεύτηκε και προστέθηκε';
+$labels['msg_removed'] = 'Ο λογαριασμός αφαιρέθηκε';
+$labels['err_delete_current'] = 'Δεν μπορείτε να διαγράψετε τον λογαριασμό με τον οποίο έχετε συνδεθεί.';
+$labels['err_missing_params'] = 'Λείπουν παράμετροι';
+$labels['err_not_found'] = 'Ο λογαριασμός δεν βρέθηκε';
+$labels['err_missing_credentials'] = 'Εισαγάγετε όνομα χρήστη και κωδικό πρόσβασης';
+$labels['err_already_self'] = 'Έχετε ήδη συνδεθεί με αυτόν τον λογαριασμό.';
+$labels['err_exception'] = 'Σφάλμα: ';
+$labels['err_connection'] = 'Σφάλμα σύνδεσης: ';
+$labels['err_already_connected'] = 'Αυτός ο λογαριασμός έχει ήδη προστεθεί.';
+$labels['err_invalid_credentials'] = 'Μη έγκυρο όνομα χρήστη ή κωδικός πρόσβασης';
+$labels['err_no_account'] = 'Δεν ορίστηκε λογαριασμός';
+$labels['err_password_missing'] = 'Δεν βρέθηκε ο κωδικός πρόσβασης του λογαριασμού';
+$labels['err_switch_failed'] = 'Η εναλλαγή λογαριασμού απέτυχε';
+$labels['err_validation'] = 'Η επαλήθευση απέτυχε';
+$labels['err_request'] = 'Το αίτημα απέτυχε. Δοκιμάστε ξανά.';

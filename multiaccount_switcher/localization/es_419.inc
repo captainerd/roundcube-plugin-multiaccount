@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'Cuentas';
+$labels['manage_accounts'] = 'Gestionar cuentas';
+$labels['add_account'] = 'Añadir cuenta';
+$labels['username_email'] = 'Usuario / Dirección de correo electrónico';
+$labels['password'] = 'Contraseña';
+$labels['save'] = 'Guardar';
+$labels['cancel'] = 'Cancelar';
+$labels['close'] = 'Cerrar';
+$labels['remember_me'] = 'Recordarme';
+$labels['confirm_delete'] = '¿Eliminar la cuenta $email?';
+$labels['msg_added'] = 'Cuenta verificada y añadida';
+$labels['msg_removed'] = 'Cuenta eliminada';
+$labels['err_delete_current'] = 'No puede eliminar la cuenta con la que ha iniciado sesión.';
+$labels['err_missing_params'] = 'Faltan parámetros';
+$labels['err_not_found'] = 'Cuenta no encontrada';
+$labels['err_missing_credentials'] = 'Introduzca el usuario y la contraseña';
+$labels['err_already_self'] = 'Ya ha iniciado sesión con esta cuenta.';
+$labels['err_exception'] = 'Error: ';
+$labels['err_connection'] = 'Error de conexión: ';
+$labels['err_already_connected'] = 'Esta cuenta ya está añadida.';
+$labels['err_invalid_credentials'] = 'Usuario o contraseña incorrectos';
+$labels['err_no_account'] = 'No se ha indicado ninguna cuenta';
+$labels['err_password_missing'] = 'No se encontró la contraseña de la cuenta';
+$labels['err_switch_failed'] = 'No se pudo cambiar de cuenta';
+$labels['err_validation'] = 'Error de verificación';
+$labels['err_request'] = 'La solicitud ha fallado. Inténtelo de nuevo.';

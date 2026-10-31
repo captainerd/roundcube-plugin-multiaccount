@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'खाते';
+$labels['manage_accounts'] = 'खाते प्रबंधित करें';
+$labels['add_account'] = 'खाता जोड़ें';
+$labels['username_email'] = 'यूसरनाम / मेल';
+$labels['password'] = 'पासवर्ड';
+$labels['save'] = 'सहेज';
+$labels['cancel'] = 'रद्द';
+$labels['close'] = 'बंद';
+$labels['remember_me'] = 'मुझे याद रखें';
+$labels['confirm_delete'] = 'खाता $email हटाएँ?';
+$labels['msg_added'] = 'खाता सत्यापित और जोड़ा गया';
+$labels['msg_removed'] = 'खाता हटाया गया';
+$labels['err_delete_current'] = 'आप उस खाते को नहीं हटा सकते जिससे आपने लॉग इन किया है।';
+$labels['err_missing_params'] = 'पैरामीटर अनुपलब्ध';
+$labels['err_not_found'] = 'खाता नहीं मिला';
+$labels['err_missing_credentials'] = 'उपयोगकर्ता नाम और पासवर्ड दर्ज करें';
+$labels['err_already_self'] = 'आप पहले से इस खाते से लॉग इन हैं।';
+$labels['err_exception'] = 'त्रुटि: ';
+$labels['err_connection'] = 'कनेक्शन त्रुटि: ';
+$labels['err_already_connected'] = 'यह खाता पहले से जोड़ा गया है।';
+$labels['err_invalid_credentials'] = 'अमान्य उपयोगकर्ता नाम या पासवर्ड';
+$labels['err_no_account'] = 'कोई खाता निर्दिष्ट नहीं';
+$labels['err_password_missing'] = 'खाते का पासवर्ड नहीं मिला';
+$labels['err_switch_failed'] = 'खाता बदलने में विफल';
+$labels['err_validation'] = 'सत्यापन विफल';
+$labels['err_request'] = 'अनुरोध विफल। कृपया पुनः प्रयास करें।';

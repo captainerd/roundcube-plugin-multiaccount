@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'Účty';
+$labels['manage_accounts'] = 'Spravovat účty';
+$labels['add_account'] = 'Přidat účet';
+$labels['username_email'] = 'Uživatel / E-mail';
+$labels['password'] = 'Heslo';
+$labels['save'] = 'Uložit';
+$labels['cancel'] = 'Konec';
+$labels['close'] = 'Zavřít';
+$labels['remember_me'] = 'Zapamatovat si mě';
+$labels['confirm_delete'] = 'Smazat účet $email?';
+$labels['msg_added'] = 'Účet ověřen a přidán';
+$labels['msg_removed'] = 'Účet odebrán';
+$labels['err_delete_current'] = 'Nelze smazat účet, pod kterým jste přihlášeni.';
+$labels['err_missing_params'] = 'Chybějící parametry';
+$labels['err_not_found'] = 'Účet nenalezen';
+$labels['err_missing_credentials'] = 'Zadejte uživatelské jméno a heslo';
+$labels['err_already_self'] = 'Pod tímto účtem jste již přihlášeni.';
+$labels['err_exception'] = 'Chyba: ';
+$labels['err_connection'] = 'Chyba připojení: ';
+$labels['err_already_connected'] = 'Tento účet je již přidán.';
+$labels['err_invalid_credentials'] = 'Neplatné uživatelské jméno nebo heslo';
+$labels['err_no_account'] = 'Nebyl zadán žádný účet';
+$labels['err_password_missing'] = 'Heslo k účtu nenalezeno';
+$labels['err_switch_failed'] = 'Přepnutí účtu se nezdařilo';
+$labels['err_validation'] = 'Ověření se nezdařilo';
+$labels['err_request'] = 'Požadavek se nezdařil. Zkuste to znovu.';

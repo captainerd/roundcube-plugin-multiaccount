@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'Kontod';
+$labels['manage_accounts'] = 'Halda kontosid';
+$labels['add_account'] = 'Lisa konto';
+$labels['username_email'] = 'Kasutajanimi / E-post';
+$labels['password'] = 'Parool';
+$labels['save'] = 'Salvesta';
+$labels['cancel'] = 'Katkesta';
+$labels['close'] = 'Sulge';
+$labels['remember_me'] = 'Jäta mind meelde';
+$labels['confirm_delete'] = 'Kas kustutada konto $email?';
+$labels['msg_added'] = 'Konto on kontrollitud ja lisatud';
+$labels['msg_removed'] = 'Konto on eemaldatud';
+$labels['err_delete_current'] = 'Kontot, millega olete sisse logitud, ei saa kustutada.';
+$labels['err_missing_params'] = 'Parameetrid puuduvad';
+$labels['err_not_found'] = 'Kontot ei leitud';
+$labels['err_missing_credentials'] = 'Sisestage kasutajanimi ja parool';
+$labels['err_already_self'] = 'Olete selle kontoga juba sisse logitud.';
+$labels['err_exception'] = 'Viga: ';
+$labels['err_connection'] = 'Ühenduse viga: ';
+$labels['err_already_connected'] = 'See konto on juba lisatud.';
+$labels['err_invalid_credentials'] = 'Vale kasutajanimi või parool';
+$labels['err_no_account'] = 'Kontot pole määratud';
+$labels['err_password_missing'] = 'Konto parooli ei leitud';
+$labels['err_switch_failed'] = 'Konto vahetamine ebaõnnestus';
+$labels['err_validation'] = 'Kontroll ebaõnnestus';
+$labels['err_request'] = 'Päring ebaõnnestus. Proovige uuesti.';

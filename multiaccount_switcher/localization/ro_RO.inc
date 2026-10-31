@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'Conturi';
+$labels['manage_accounts'] = 'Gestionare conturi';
+$labels['add_account'] = 'Adaugă cont';
+$labels['username_email'] = 'Utilizator / E-Mail';
+$labels['password'] = 'Parolă';
+$labels['save'] = 'Salvează';
+$labels['cancel'] = 'Renunţă';
+$labels['close'] = 'Închide';
+$labels['remember_me'] = 'Ține-mă minte';
+$labels['confirm_delete'] = 'Ștergeți contul $email?';
+$labels['msg_added'] = 'Contul a fost verificat și adăugat';
+$labels['msg_removed'] = 'Contul a fost eliminat';
+$labels['err_delete_current'] = 'Nu puteți șterge contul cu care sunteți autentificat.';
+$labels['err_missing_params'] = 'Parametri lipsă';
+$labels['err_not_found'] = 'Contul nu a fost găsit';
+$labels['err_missing_credentials'] = 'Introduceți numele de utilizator și parola';
+$labels['err_already_self'] = 'Sunteți deja autentificat cu acest cont.';
+$labels['err_exception'] = 'Eroare: ';
+$labels['err_connection'] = 'Eroare de conexiune: ';
+$labels['err_already_connected'] = 'Acest cont este deja adăugat.';
+$labels['err_invalid_credentials'] = 'Nume de utilizator sau parolă incorecte';
+$labels['err_no_account'] = 'Nu a fost specificat niciun cont';
+$labels['err_password_missing'] = 'Parola contului nu a fost găsită';
+$labels['err_switch_failed'] = 'Comutarea contului a eșuat';
+$labels['err_validation'] = 'Verificarea a eșuat';
+$labels['err_request'] = 'Cererea a eșuat. Încercați din nou.';

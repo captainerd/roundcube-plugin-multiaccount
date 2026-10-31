@@ -11,7 +11,7 @@
      <td colspan="2">
      <div class="custom-control custom-switch">
      <input type="checkbox" class="custom-control-input" id="rememberme" name="rememberme" checked>
-     <label class="custom-control-label" for="rememberme">Remember me</label>
+     <label class="custom-control-label" for="rememberme">${rcmail.gettext('multiaccount_switcher.remember_me')}</label>
      </div>
      </td>`;
 

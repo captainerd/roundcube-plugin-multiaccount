@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'Comptes';
+$labels['manage_accounts'] = 'Gérer les comptes';
+$labels['add_account'] = 'Ajouter un compte';
+$labels['username_email'] = 'Nom d’utilisateur / Courriel';
+$labels['password'] = 'Mot de passe';
+$labels['save'] = 'Enregistrer';
+$labels['cancel'] = 'Annuler';
+$labels['close'] = 'Fermer';
+$labels['remember_me'] = 'Se souvenir de moi';
+$labels['confirm_delete'] = 'Supprimer le compte $email ?';
+$labels['msg_added'] = 'Compte vérifié et ajouté';
+$labels['msg_removed'] = 'Compte supprimé';
+$labels['err_delete_current'] = 'Impossible de supprimer le compte avec lequel vous êtes connecté.';
+$labels['err_missing_params'] = 'Paramètres manquants';
+$labels['err_not_found'] = 'Compte introuvable';
+$labels['err_missing_credentials'] = 'Veuillez saisir le nom d’utilisateur et le mot de passe';
+$labels['err_already_self'] = 'Vous êtes déjà connecté avec ce compte.';
+$labels['err_exception'] = 'Erreur : ';
+$labels['err_connection'] = 'Erreur de connexion : ';
+$labels['err_already_connected'] = 'Ce compte est déjà ajouté.';
+$labels['err_invalid_credentials'] = 'Nom d’utilisateur ou mot de passe incorrect';
+$labels['err_no_account'] = 'Aucun compte indiqué';
+$labels['err_password_missing'] = 'Mot de passe du compte introuvable';
+$labels['err_switch_failed'] = 'Impossible de changer de compte';
+$labels['err_validation'] = 'Échec de la vérification';
+$labels['err_request'] = 'La requête a échoué. Veuillez réessayer.';

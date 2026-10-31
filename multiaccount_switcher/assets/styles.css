@@ -64,3 +64,8 @@ html.dark-mode .account-row {
 html.dark-mode .account-row:hover {
   background-color: #3a3f45;
 }
+
+/* Main menu item (Elastic icon font) */
+#taskmenu a.multiaccount:before {
+  content: "\f2bd"; /* user-circle */
+}

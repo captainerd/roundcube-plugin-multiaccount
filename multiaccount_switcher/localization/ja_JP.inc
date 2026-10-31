@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'アカウント';
+$labels['manage_accounts'] = 'アカウントの管理';
+$labels['add_account'] = 'アカウントを追加';
+$labels['username_email'] = 'ユーザー名 / 電子メール';
+$labels['password'] = 'パスワード';
+$labels['save'] = '保存';
+$labels['cancel'] = '取り止め';
+$labels['close'] = '閉じる';
+$labels['remember_me'] = 'ログイン状態を保持';
+$labels['confirm_delete'] = 'アカウント $email を削除しますか？';
+$labels['msg_added'] = 'アカウントを確認して追加しました';
+$labels['msg_removed'] = 'アカウントを削除しました';
+$labels['err_delete_current'] = 'ログイン中のアカウントは削除できません。';
+$labels['err_missing_params'] = 'パラメーターが不足しています';
+$labels['err_not_found'] = 'アカウントが見つかりません';
+$labels['err_missing_credentials'] = 'ユーザー名とパスワードを入力してください';
+$labels['err_already_self'] = 'このアカウントで既にログインしています。';
+$labels['err_exception'] = 'エラー: ';
+$labels['err_connection'] = '接続エラー: ';
+$labels['err_already_connected'] = 'このアカウントは既に追加されています。';
+$labels['err_invalid_credentials'] = 'ユーザー名またはパスワードが正しくありません';
+$labels['err_no_account'] = 'アカウントが指定されていません';
+$labels['err_password_missing'] = 'アカウントのパスワードが見つかりません';
+$labels['err_switch_failed'] = 'アカウントを切り替えられませんでした';
+$labels['err_validation'] = '確認に失敗しました';
+$labels['err_request'] = 'リクエストに失敗しました。もう一度お試しください。';

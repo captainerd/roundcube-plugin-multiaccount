@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     return;
   }
   rcmail.refresh_list();
+  const t = (k) => rcmail.gettext('multiaccount_switcher.' + k);
   const { csrfToken, currentEmail, switchUrl, deleteUrl, rootUrl } = window.AccountSwitcherConfig;
 
   // Handle add account form submit
@@ -15,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const password = document.getElementById('addAccountPassword').value;
 
       if (!username || !password) {
-        rcmail.display_message('Please enter username and password', 'danger');
+        rcmail.display_message(t('err_missing_credentials'), 'danger');
         return;
       }
 
@@ -37,19 +38,57 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(response => response.json())
       .then(data => {
         if (data.status === 'success') {
-          rcmail.display_message('Account validated and added successfully!', 'success');
+          rcmail.display_message(t('msg_added'), 'success');
           addForm.reset();
           $('#addAccountModal').modal('hide');
           setTimeout(() => location.reload(), 4000);
         } else {
-          rcmail.display_message(data.message || 'Validation failed', 'error');
+          rcmail.display_message(data.message || t('err_validation'), 'error');
         }
       })
       .catch(() => {
-        rcmail.display_message('AJAX request failed', 'error');
+        rcmail.display_message(t('err_request'), 'error');
       });
     });
   }
+
+  function switchTo(email) {
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = switchUrl;
+
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = 'account';
+    input.value = email;
+    form.appendChild(input);
+
+    const inputCsrf = document.createElement('input');
+    inputCsrf.type = 'hidden';
+    inputCsrf.name = '_token';
+    inputCsrf.value = csrfToken;
+    form.appendChild(inputCsrf);
+
+    document.body.appendChild(form);
+    form.submit();
+  }
+
+  // Main menu item opens the accounts dialog
+  const menuBtn = document.getElementById('multiaccount-menu');
+  if (menuBtn) {
+    menuBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      $('#manageAccountsModal').modal('show');
+    });
+  }
+
+  // Click on an account in the dialog switches to it
+  document.querySelectorAll('.switch-account-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      switchTo(this.dataset.email);
+    });
+  });
 
   // Dropdown change handler for switching or managing accounts
   const select = document.querySelector('.custom-select.pretty-select');
@@ -59,24 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
         $('#manageAccountsModal').modal('show');
         this.value = currentEmail;
       } else {
-        const form = document.createElement('form');
-        form.method = 'POST';
-        form.action = switchUrl;
-
-        const input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = 'account';
-        input.value = this.value;
-        form.appendChild(input);
-
-        const inputCsrf = document.createElement('input');
-        inputCsrf.type = 'hidden';
-        inputCsrf.name = '_token';
-        inputCsrf.value = csrfToken;
-        form.appendChild(inputCsrf);
-
-        document.body.appendChild(form);
-        form.submit();
+        switchTo(this.value);
  
         
       }
@@ -88,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.delete-account-btn').forEach(btn => {
     btn.addEventListener('click', function () {
       const email = this.dataset.email;
-      if (!confirm('Delete account ' + email + '?')) return;
+      if (!confirm(t('confirm_delete').replace('$email', email))) return;
 
       const data = new URLSearchParams({
         _token: csrfToken,
@@ -116,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
              
       })
       .catch(() => {
-        rcmail.display_message('Request failed. Please try again.', 'danger');
+        rcmail.display_message(t('err_request'), 'danger');
       });
     });
   });

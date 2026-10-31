@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'Paskyros';
+$labels['manage_accounts'] = 'Tvarkyti paskyras';
+$labels['add_account'] = 'Pridėti paskyrą';
+$labels['username_email'] = 'Naudotojo vardas / El. paštas';
+$labels['password'] = 'Slaptažodis';
+$labels['save'] = 'Įrašyti';
+$labels['cancel'] = 'Atsisakyti';
+$labels['close'] = 'Užverti';
+$labels['remember_me'] = 'Prisiminti mane';
+$labels['confirm_delete'] = 'Ištrinti paskyrą $email?';
+$labels['msg_added'] = 'Paskyra patikrinta ir pridėta';
+$labels['msg_removed'] = 'Paskyra pašalinta';
+$labels['err_delete_current'] = 'Negalite ištrinti paskyros, kuria esate prisijungę.';
+$labels['err_missing_params'] = 'Trūksta parametrų';
+$labels['err_not_found'] = 'Paskyra nerasta';
+$labels['err_missing_credentials'] = 'Įveskite naudotojo vardą ir slaptažodį';
+$labels['err_already_self'] = 'Jūs jau esate prisijungę šia paskyra.';
+$labels['err_exception'] = 'Klaida: ';
+$labels['err_connection'] = 'Ryšio klaida: ';
+$labels['err_already_connected'] = 'Ši paskyra jau pridėta.';
+$labels['err_invalid_credentials'] = 'Neteisingas naudotojo vardas arba slaptažodis';
+$labels['err_no_account'] = 'Paskyra nenurodyta';
+$labels['err_password_missing'] = 'Paskyros slaptažodis nerastas';
+$labels['err_switch_failed'] = 'Nepavyko perjungti paskyros';
+$labels['err_validation'] = 'Patikrinimas nepavyko';
+$labels['err_request'] = 'Užklausa nepavyko. Bandykite dar kartą.';

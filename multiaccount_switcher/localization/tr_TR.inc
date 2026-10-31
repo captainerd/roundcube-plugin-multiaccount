@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'Hesaplar';
+$labels['manage_accounts'] = 'Hesapları yönet';
+$labels['add_account'] = 'Hesap ekle';
+$labels['username_email'] = 'Kullanıcı adı / E-posta';
+$labels['password'] = 'Parola';
+$labels['save'] = 'Kaydet';
+$labels['cancel'] = 'İptal';
+$labels['close'] = 'Kapat';
+$labels['remember_me'] = 'Beni hatırla';
+$labels['confirm_delete'] = '$email hesabı silinsin mi?';
+$labels['msg_added'] = 'Hesap doğrulandı ve eklendi';
+$labels['msg_removed'] = 'Hesap kaldırıldı';
+$labels['err_delete_current'] = 'Oturum açtığınız hesabı silemezsiniz.';
+$labels['err_missing_params'] = 'Eksik parametreler';
+$labels['err_not_found'] = 'Hesap bulunamadı';
+$labels['err_missing_credentials'] = 'Kullanıcı adı ve parolayı girin';
+$labels['err_already_self'] = 'Bu hesapla zaten oturum açtınız.';
+$labels['err_exception'] = 'Hata: ';
+$labels['err_connection'] = 'Bağlantı hatası: ';
+$labels['err_already_connected'] = 'Bu hesap zaten eklenmiş.';
+$labels['err_invalid_credentials'] = 'Geçersiz kullanıcı adı veya parola';
+$labels['err_no_account'] = 'Hesap belirtilmedi';
+$labels['err_password_missing'] = 'Hesabın parolası bulunamadı';
+$labels['err_switch_failed'] = 'Hesap değiştirilemedi';
+$labels['err_validation'] = 'Doğrulama başarısız';
+$labels['err_request'] = 'İstek başarısız oldu. Lütfen tekrar deneyin.';

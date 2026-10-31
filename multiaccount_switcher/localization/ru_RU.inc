@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'Учётные записи';
+$labels['manage_accounts'] = 'Управление учётными записями';
+$labels['add_account'] = 'Добавить учётную запись';
+$labels['username_email'] = 'Логин / Email';
+$labels['password'] = 'Пароль';
+$labels['save'] = 'Сохранить';
+$labels['cancel'] = 'Отмена';
+$labels['close'] = 'Закрыть';
+$labels['remember_me'] = 'Запомнить меня';
+$labels['confirm_delete'] = 'Удалить учётную запись $email?';
+$labels['msg_added'] = 'Учётная запись проверена и добавлена';
+$labels['msg_removed'] = 'Учётная запись удалена';
+$labels['err_delete_current'] = 'Нельзя удалить учётную запись, под которой вы вошли.';
+$labels['err_missing_params'] = 'Не хватает параметров';
+$labels['err_not_found'] = 'Учётная запись не найдена';
+$labels['err_missing_credentials'] = 'Введите логин и пароль';
+$labels['err_already_self'] = 'Это учётная запись, под которой вы вошли.';
+$labels['err_exception'] = 'Ошибка: ';
+$labels['err_connection'] = 'Ошибка подключения: ';
+$labels['err_already_connected'] = 'Эта учётная запись уже добавлена.';
+$labels['err_invalid_credentials'] = 'Неверный логин или пароль';
+$labels['err_no_account'] = 'Учётная запись не указана';
+$labels['err_password_missing'] = 'Пароль учётной записи не найден';
+$labels['err_switch_failed'] = 'Не удалось переключить учётную запись';
+$labels['err_validation'] = 'Проверка не пройдена';
+$labels['err_request'] = 'Запрос не выполнен. Попробуйте ещё раз.';

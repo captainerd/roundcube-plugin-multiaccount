@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'บัญชี';
+$labels['manage_accounts'] = 'จัดการบัญชี';
+$labels['add_account'] = 'เพิ่มบัญชี';
+$labels['username_email'] = 'บัญชีผู้ใช้ / อีเมล์';
+$labels['password'] = 'รหัสผ่าน';
+$labels['save'] = 'บันทึก';
+$labels['cancel'] = 'ยกเลิก';
+$labels['close'] = 'ปิด';
+$labels['remember_me'] = 'จดจำฉันไว้';
+$labels['confirm_delete'] = 'ลบบัญชี $email หรือไม่?';
+$labels['msg_added'] = 'ตรวจสอบและเพิ่มบัญชีแล้ว';
+$labels['msg_removed'] = 'ลบบัญชีแล้ว';
+$labels['err_delete_current'] = 'ไม่สามารถลบบัญชีที่คุณเข้าสู่ระบบอยู่ได้';
+$labels['err_missing_params'] = 'พารามิเตอร์ไม่ครบ';
+$labels['err_not_found'] = 'ไม่พบบัญชี';
+$labels['err_missing_credentials'] = 'กรุณากรอกชื่อผู้ใช้และรหัสผ่าน';
+$labels['err_already_self'] = 'คุณเข้าสู่ระบบด้วยบัญชีนี้อยู่แล้ว';
+$labels['err_exception'] = 'ข้อผิดพลาด: ';
+$labels['err_connection'] = 'การเชื่อมต่อผิดพลาด: ';
+$labels['err_already_connected'] = 'เพิ่มบัญชีนี้แล้ว';
+$labels['err_invalid_credentials'] = 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง';
+$labels['err_no_account'] = 'ไม่ได้ระบุบัญชี';
+$labels['err_password_missing'] = 'ไม่พบรหัสผ่านของบัญชี';
+$labels['err_switch_failed'] = 'สลับบัญชีไม่สำเร็จ';
+$labels['err_validation'] = 'การตรวจสอบล้มเหลว';
+$labels['err_request'] = 'คำขอล้มเหลว กรุณาลองอีกครั้ง';

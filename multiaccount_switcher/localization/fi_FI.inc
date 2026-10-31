@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'Tilit';
+$labels['manage_accounts'] = 'Hallitse tilejä';
+$labels['add_account'] = 'Lisää tili';
+$labels['username_email'] = 'Käyttäjätunnus / Sähköposti';
+$labels['password'] = 'Salasana';
+$labels['save'] = 'Tallenna';
+$labels['cancel'] = 'Peruuta';
+$labels['close'] = 'Sulje';
+$labels['remember_me'] = 'Muista minut';
+$labels['confirm_delete'] = 'Poistetaanko tili $email?';
+$labels['msg_added'] = 'Tili tarkistettu ja lisätty';
+$labels['msg_removed'] = 'Tili poistettu';
+$labels['err_delete_current'] = 'Et voi poistaa tiliä, jolla olet kirjautuneena.';
+$labels['err_missing_params'] = 'Puuttuvia parametreja';
+$labels['err_not_found'] = 'Tiliä ei löytynyt';
+$labels['err_missing_credentials'] = 'Anna käyttäjätunnus ja salasana';
+$labels['err_already_self'] = 'Olet jo kirjautuneena tällä tilillä.';
+$labels['err_exception'] = 'Virhe: ';
+$labels['err_connection'] = 'Yhteysvirhe: ';
+$labels['err_already_connected'] = 'Tämä tili on jo lisätty.';
+$labels['err_invalid_credentials'] = 'Virheellinen käyttäjätunnus tai salasana';
+$labels['err_no_account'] = 'Tiliä ei määritetty';
+$labels['err_password_missing'] = 'Tilin salasanaa ei löytynyt';
+$labels['err_switch_failed'] = 'Tilin vaihto epäonnistui';
+$labels['err_validation'] = 'Tarkistus epäonnistui';
+$labels['err_request'] = 'Pyyntö epäonnistui. Yritä uudelleen.';

@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = '帳號';
+$labels['manage_accounts'] = '管理帳號';
+$labels['add_account'] = '新增帳號';
+$labels['username_email'] = '使用者名稱 / 電子郵件';
+$labels['password'] = '使用者密碼';
+$labels['save'] = '儲存';
+$labels['cancel'] = '取消';
+$labels['close'] = '關閉';
+$labels['remember_me'] = '記住我';
+$labels['confirm_delete'] = '刪除帳號 $email？';
+$labels['msg_added'] = '帳號已驗證並新增';
+$labels['msg_removed'] = '帳號已移除';
+$labels['err_delete_current'] = '無法刪除目前登入的帳號。';
+$labels['err_missing_params'] = '缺少參數';
+$labels['err_not_found'] = '找不到帳號';
+$labels['err_missing_credentials'] = '請輸入使用者名稱和密碼';
+$labels['err_already_self'] = '您已使用此帳號登入。';
+$labels['err_exception'] = '錯誤：';
+$labels['err_connection'] = '連線錯誤：';
+$labels['err_already_connected'] = '此帳號已新增。';
+$labels['err_invalid_credentials'] = '使用者名稱或密碼無效';
+$labels['err_no_account'] = '未指定帳號';
+$labels['err_password_missing'] = '找不到帳號密碼';
+$labels['err_switch_failed'] = '切換帳號失敗';
+$labels['err_validation'] = '驗證失敗';
+$labels['err_request'] = '請求失敗，請再試一次。';

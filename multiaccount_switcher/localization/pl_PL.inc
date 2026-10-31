@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'Konta';
+$labels['manage_accounts'] = 'Zarządzaj kontami';
+$labels['add_account'] = 'Dodaj konto';
+$labels['username_email'] = 'Nazwa użytkownika / E-Mail';
+$labels['password'] = 'Hasło';
+$labels['save'] = 'Zapisz';
+$labels['cancel'] = 'Anuluj';
+$labels['close'] = 'Zamknij';
+$labels['remember_me'] = 'Zapamiętaj mnie';
+$labels['confirm_delete'] = 'Usunąć konto $email?';
+$labels['msg_added'] = 'Konto zweryfikowane i dodane';
+$labels['msg_removed'] = 'Konto usunięte';
+$labels['err_delete_current'] = 'Nie można usunąć konta, na które jesteś zalogowany.';
+$labels['err_missing_params'] = 'Brak parametrów';
+$labels['err_not_found'] = 'Nie znaleziono konta';
+$labels['err_missing_credentials'] = 'Podaj nazwę użytkownika i hasło';
+$labels['err_already_self'] = 'Jesteś już zalogowany na to konto.';
+$labels['err_exception'] = 'Błąd: ';
+$labels['err_connection'] = 'Błąd połączenia: ';
+$labels['err_already_connected'] = 'To konto zostało już dodane.';
+$labels['err_invalid_credentials'] = 'Nieprawidłowa nazwa użytkownika lub hasło';
+$labels['err_no_account'] = 'Nie wskazano konta';
+$labels['err_password_missing'] = 'Nie znaleziono hasła konta';
+$labels['err_switch_failed'] = 'Nie udało się przełączyć konta';
+$labels['err_validation'] = 'Weryfikacja nie powiodła się';
+$labels['err_request'] = 'Żądanie nie powiodło się. Spróbuj ponownie.';

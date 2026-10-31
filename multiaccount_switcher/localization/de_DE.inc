@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'Konten';
+$labels['manage_accounts'] = 'Konten verwalten';
+$labels['add_account'] = 'Konto hinzufügen';
+$labels['username_email'] = 'Benutzername / E-Mail';
+$labels['password'] = 'Passwort';
+$labels['save'] = 'Speichern';
+$labels['cancel'] = 'Abbrechen';
+$labels['close'] = 'Schließen';
+$labels['remember_me'] = 'Angemeldet bleiben';
+$labels['confirm_delete'] = 'Konto $email löschen?';
+$labels['msg_added'] = 'Konto geprüft und hinzugefügt';
+$labels['msg_removed'] = 'Konto entfernt';
+$labels['err_delete_current'] = 'Das Konto, mit dem Sie angemeldet sind, kann nicht gelöscht werden.';
+$labels['err_missing_params'] = 'Fehlende Parameter';
+$labels['err_not_found'] = 'Konto nicht gefunden';
+$labels['err_missing_credentials'] = 'Bitte Benutzername und Passwort eingeben';
+$labels['err_already_self'] = 'Mit diesem Konto sind Sie bereits angemeldet.';
+$labels['err_exception'] = 'Fehler: ';
+$labels['err_connection'] = 'Verbindungsfehler: ';
+$labels['err_already_connected'] = 'Dieses Konto ist bereits hinzugefügt.';
+$labels['err_invalid_credentials'] = 'Ungültiger Benutzername oder ungültiges Passwort';
+$labels['err_no_account'] = 'Kein Konto angegeben';
+$labels['err_password_missing'] = 'Passwort für das Konto nicht gefunden';
+$labels['err_switch_failed'] = 'Kontowechsel fehlgeschlagen';
+$labels['err_validation'] = 'Überprüfung fehlgeschlagen';
+$labels['err_request'] = 'Anfrage fehlgeschlagen. Bitte erneut versuchen.';

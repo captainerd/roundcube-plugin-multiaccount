@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'Accounts';
+$labels['manage_accounts'] = 'Manage Accounts';
+$labels['add_account'] = 'Add Account';
+$labels['username_email'] = 'Username / Email';
+$labels['password'] = 'Password';
+$labels['save'] = 'Save';
+$labels['cancel'] = 'Cancel';
+$labels['close'] = 'Close';
+$labels['remember_me'] = 'Remember me';
+$labels['confirm_delete'] = 'Delete account $email?';
+$labels['msg_added'] = 'Account validated and added successfully!';
+$labels['msg_removed'] = 'Account removed successfully';
+$labels['err_delete_current'] = "You cannot delete the account you're logged in with.";
+$labels['err_missing_params'] = 'Missing parameters';
+$labels['err_not_found'] = 'Connection not found';
+$labels['err_missing_credentials'] = 'Please enter username and password';
+$labels['err_already_self'] = 'This is the account you are logged in with.';
+$labels['err_exception'] = 'Exception: ';
+$labels['err_connection'] = 'Connection error: ';
+$labels['err_already_connected'] = 'You are already connected to this account.';
+$labels['err_invalid_credentials'] = 'Invalid username or password';
+$labels['err_no_account'] = 'No account specified';
+$labels['err_password_missing'] = 'Account password missing';
+$labels['err_switch_failed'] = 'Failed to switch account';
+$labels['err_validation'] = 'Validation failed';
+$labels['err_request'] = 'Request failed. Please try again.';

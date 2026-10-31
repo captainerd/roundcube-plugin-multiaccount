@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'Акаунти';
+$labels['manage_accounts'] = 'Управление на акаунти';
+$labels['add_account'] = 'Добавяне на акаунт';
+$labels['username_email'] = 'Потребител / Ел. поща';
+$labels['password'] = 'Парола';
+$labels['save'] = 'Запис';
+$labels['cancel'] = 'Отказ';
+$labels['close'] = 'Затвори';
+$labels['remember_me'] = 'Запомни ме';
+$labels['confirm_delete'] = 'Изтриване на акаунта $email?';
+$labels['msg_added'] = 'Акаунтът е проверен и добавен';
+$labels['msg_removed'] = 'Акаунтът е премахнат';
+$labels['err_delete_current'] = 'Не можете да изтриете акаунта, с който сте влезли.';
+$labels['err_missing_params'] = 'Липсващи параметри';
+$labels['err_not_found'] = 'Акаунтът не е намерен';
+$labels['err_missing_credentials'] = 'Въведете потребителско име и парола';
+$labels['err_already_self'] = 'Вече сте влезли с този акаунт.';
+$labels['err_exception'] = 'Грешка: ';
+$labels['err_connection'] = 'Грешка при свързване: ';
+$labels['err_already_connected'] = 'Този акаунт вече е добавен.';
+$labels['err_invalid_credentials'] = 'Невалидно потребителско име или парола';
+$labels['err_no_account'] = 'Не е посочен акаунт';
+$labels['err_password_missing'] = 'Паролата на акаунта не е намерена';
+$labels['err_switch_failed'] = 'Неуспешна смяна на акаунт';
+$labels['err_validation'] = 'Неуспешна проверка';
+$labels['err_request'] = 'Заявката е неуспешна. Опитайте отново.';

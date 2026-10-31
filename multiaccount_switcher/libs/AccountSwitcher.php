@@ -47,12 +47,13 @@ class AccountSwitcher extends multiaccount_switcher
                 $accounts[$user] = rcube_user::user2email($user, true) ?? $user;
             }
         }
-        $accounts['manage'] = '🔧&nbsp;Manage Accounts';
+        $accounts['manage'] = '🔧&nbsp;' . rcube::Q($this->plugin->gettext('manage_accounts'));
 
         $options_html = '';
         foreach ($accounts as $email => $name) {
             $selected = ($email === $current_email) ? 'selected' : '';
-            $options_html .= "<option value=\"$email\" $selected>$name</option>";
+            $label = $email === 'manage' ? $name : rcube::Q($name);
+            $options_html .= '<option value="' . rcube::Q($email) . "\" $selected>$label</option>";
         }
         $select_html = "<select class=\"custom-select mt-3 form-control pretty-select\" style=\"margin: 0 5px;\">$options_html</select>";
 
@@ -71,13 +72,18 @@ class AccountSwitcher extends multiaccount_switcher
                 continue;
             $account_rows .= '
             <div data-email="' . htmlspecialchars($email) . '-row" class="row  account-row align-items-center mb-2">
-                <div   class="col">' . htmlspecialchars($name) . '</div>
+                <div   class="col">' . ($email === $current_email
+                    ? '<i class="fas fa-check"></i> ' . htmlspecialchars($name)
+                    : '<a href="#" class="switch-account-link" data-email="' . htmlspecialchars($email) . '">' . htmlspecialchars($name) . '</a>') . '</div>
                 <div class="col-auto">
                     <button type="button" class="btn btn-danger btn-sm delete-account-btn" data-email="' . htmlspecialchars($email) . '"><i class="fas fa-trash"></i></button>
                 </div>
             </div>';
         }
         $manage_modal_html = str_replace('{{accounts}}', $account_rows, $manage_template);
+        $tr = fn($m) => rcube::Q($this->plugin->gettext($m[1]));
+        $manage_modal_html = preg_replace_callback('/\{\{t:(\w+)\}\}/', $tr, $manage_modal_html);
+        $add_template = preg_replace_callback('/\{\{t:(\w+)\}\}/', $tr, $add_template);
 
         $args['content'] = str_replace('</body>', $manage_modal_html . $add_template . '</body>', $args['content']);
 
@@ -107,23 +113,43 @@ class AccountSwitcher extends multiaccount_switcher
     {
         $username = rcube_utils::get_input_value('account', rcube_utils::INPUT_POST);
         if (!$username) {
-            $this->rcmail->output->command('display_message', 'No account specified', 'error');
+            $this->rcmail->output->command('display_message', $this->plugin->gettext('err_no_account'), 'error');
+            return;
+        }
+
+        // Only accounts linked to the current user can be switched to
+        if (!in_array(strtolower(trim($username)), $this->utils->get_connections(), true)) {
+            $this->rcmail->output->command('display_message', $this->plugin->gettext('err_not_found'), 'error');
             return;
         }
 
         $password = $this->utils->get_decrypted_password_for_user($username, $this->key);
 
+        // Remember the account we are leaving, so it is possible to switch back to it
+        $current_email = $this->utils->get_current_username();
+        $current_password = $this->rcmail->get_user_password();
+        if ($current_email && $current_password) {
+            $this->utils->store_usercookie($current_email, $current_password);
+        }
+
         
         if (!isset($password)) {
-            $this->rcmail->output->command('display_message', 'Account password missing', 'error');
+            $this->rcmail->output->command('display_message', $this->plugin->gettext('err_password_missing'), 'error');
             return;
         }
 
+        // Start a clean session like a normal login does, so nothing (current folder,
+        // search, folder cache) leaks from the previous account
+        $this->rcmail->kill_session();
+
         if ($this->rcmail->login($username, $password)) {
-            header('Location: ' . $this->rcmail->url(['_task' => 'mail']));
+            $this->rcmail->session->remove('temp');
+            $this->rcmail->session->regenerate_id(false);
+            $this->rcmail->session->set_auth_cookie();
+            header('Location: ' . $this->rcmail->url(['_task' => 'mail', '_mbox' => 'INBOX']));
             exit;
         } else {
-            $this->rcmail->output->command('display_message', 'Failed to switch user', 'error');
+            $this->rcmail->output->command('display_message', $this->plugin->gettext('err_switch_failed'), 'error');
         }
     }
 

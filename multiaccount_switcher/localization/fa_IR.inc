@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'حساب‌ها';
+$labels['manage_accounts'] = 'مدیریت حساب‌ها';
+$labels['add_account'] = 'افزودن حساب';
+$labels['username_email'] = 'نام‌کاربری / پست‌الکترونیک';
+$labels['password'] = 'گذرواژه';
+$labels['save'] = 'ذخیره';
+$labels['cancel'] = 'لغو';
+$labels['close'] = 'بستن';
+$labels['remember_me'] = 'مرا به خاطر بسپار';
+$labels['confirm_delete'] = 'حساب $email حذف شود؟';
+$labels['msg_added'] = 'حساب تأیید و افزوده شد';
+$labels['msg_removed'] = 'حساب حذف شد';
+$labels['err_delete_current'] = 'نمی‌توانید حسابی را که با آن وارد شده‌اید حذف کنید.';
+$labels['err_missing_params'] = 'پارامترها ناقص است';
+$labels['err_not_found'] = 'حساب یافت نشد';
+$labels['err_missing_credentials'] = 'نام کاربری و گذرواژه را وارد کنید';
+$labels['err_already_self'] = 'شما هم‌اکنون با این حساب وارد شده‌اید.';
+$labels['err_exception'] = 'خطا: ';
+$labels['err_connection'] = 'خطای اتصال: ';
+$labels['err_already_connected'] = 'این حساب قبلاً افزوده شده است.';
+$labels['err_invalid_credentials'] = 'نام کاربری یا گذرواژه نادرست است';
+$labels['err_no_account'] = 'حسابی مشخص نشده است';
+$labels['err_password_missing'] = 'گذرواژه حساب یافت نشد';
+$labels['err_switch_failed'] = 'تغییر حساب ناموفق بود';
+$labels['err_validation'] = 'تأیید ناموفق بود';
+$labels['err_request'] = 'درخواست ناموفق بود. دوباره تلاش کنید.';
