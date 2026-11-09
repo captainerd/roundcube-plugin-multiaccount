@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'Akun';
+$labels['manage_accounts'] = 'Kelola akun';
+$labels['add_account'] = 'Tambah akun';
+$labels['username_email'] = 'Username / E-Mail';
+$labels['password'] = 'Password';
+$labels['save'] = 'Simpan';
+$labels['cancel'] = 'Batal';
+$labels['close'] = 'Tutup';
+$labels['remember_me'] = 'Ingat saya';
+$labels['confirm_delete'] = 'Hapus akun $email?';
+$labels['msg_added'] = 'Akun diverifikasi dan ditambahkan';
+$labels['msg_removed'] = 'Akun dihapus';
+$labels['err_delete_current'] = 'Anda tidak dapat menghapus akun yang sedang Anda gunakan untuk masuk.';
+$labels['err_missing_params'] = 'Parameter tidak lengkap';
+$labels['err_not_found'] = 'Akun tidak ditemukan';
+$labels['err_missing_credentials'] = 'Masukkan nama pengguna dan kata sandi';
+$labels['err_already_self'] = 'Anda sudah masuk dengan akun ini.';
+$labels['err_exception'] = 'Galat: ';
+$labels['err_connection'] = 'Galat koneksi: ';
+$labels['err_already_connected'] = 'Akun ini sudah ditambahkan.';
+$labels['err_invalid_credentials'] = 'Nama pengguna atau kata sandi tidak valid';
+$labels['err_no_account'] = 'Tidak ada akun yang ditentukan';
+$labels['err_password_missing'] = 'Kata sandi akun tidak ditemukan';
+$labels['err_switch_failed'] = 'Gagal beralih akun';
+$labels['err_validation'] = 'Verifikasi gagal';
+$labels['err_request'] = 'Permintaan gagal. Silakan coba lagi.';

@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'Računi';
+$labels['manage_accounts'] = 'Upravljanje računima';
+$labels['add_account'] = 'Dodaj račun';
+$labels['username_email'] = 'Korisničko ime / E-mail';
+$labels['password'] = 'Lozinka';
+$labels['save'] = 'Spremi';
+$labels['cancel'] = 'Odustani';
+$labels['close'] = 'Zatvori';
+$labels['remember_me'] = 'Zapamti me';
+$labels['confirm_delete'] = 'Izbrisati račun $email?';
+$labels['msg_added'] = 'Račun je provjeren i dodan';
+$labels['msg_removed'] = 'Račun je uklonjen';
+$labels['err_delete_current'] = 'Ne možete izbrisati račun s kojim ste prijavljeni.';
+$labels['err_missing_params'] = 'Nedostaju parametri';
+$labels['err_not_found'] = 'Račun nije pronađen';
+$labels['err_missing_credentials'] = 'Unesite korisničko ime i lozinku';
+$labels['err_already_self'] = 'Već ste prijavljeni s ovim računom.';
+$labels['err_exception'] = 'Pogreška: ';
+$labels['err_connection'] = 'Pogreška veze: ';
+$labels['err_already_connected'] = 'Ovaj račun je već dodan.';
+$labels['err_invalid_credentials'] = 'Neispravno korisničko ime ili lozinka';
+$labels['err_no_account'] = 'Račun nije naveden';
+$labels['err_password_missing'] = 'Lozinka računa nije pronađena';
+$labels['err_switch_failed'] = 'Promjena računa nije uspjela';
+$labels['err_validation'] = 'Provjera nije uspjela';
+$labels['err_request'] = 'Zahtjev nije uspio. Pokušajte ponovno.';

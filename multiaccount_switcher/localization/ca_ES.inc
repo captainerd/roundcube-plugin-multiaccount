@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'Comptes';
+$labels['manage_accounts'] = 'Gestiona els comptes';
+$labels['add_account'] = 'Afegeix un compte';
+$labels['username_email'] = 'Nom d\'usuari / Correu electrònic';
+$labels['password'] = 'Contrasenya';
+$labels['save'] = 'Desa';
+$labels['cancel'] = 'Cancel·la';
+$labels['close'] = 'Tanca';
+$labels['remember_me'] = 'Recorda’m';
+$labels['confirm_delete'] = 'Voleu suprimir el compte $email?';
+$labels['msg_added'] = 'Compte verificat i afegit';
+$labels['msg_removed'] = 'Compte eliminat';
+$labels['err_delete_current'] = 'No podeu suprimir el compte amb què heu iniciat la sessió.';
+$labels['err_missing_params'] = 'Falten paràmetres';
+$labels['err_not_found'] = 'No s’ha trobat el compte';
+$labels['err_missing_credentials'] = 'Introduïu l’usuari i la contrasenya';
+$labels['err_already_self'] = 'Ja heu iniciat la sessió amb aquest compte.';
+$labels['err_exception'] = 'Error: ';
+$labels['err_connection'] = 'Error de connexió: ';
+$labels['err_already_connected'] = 'Aquest compte ja s’ha afegit.';
+$labels['err_invalid_credentials'] = 'Usuari o contrasenya incorrectes';
+$labels['err_no_account'] = 'No s’ha indicat cap compte';
+$labels['err_password_missing'] = 'No s’ha trobat la contrasenya del compte';
+$labels['err_switch_failed'] = 'No s’ha pogut canviar de compte';
+$labels['err_validation'] = 'La verificació ha fallat';
+$labels['err_request'] = 'La sol·licitud ha fallat. Torneu-ho a provar.';

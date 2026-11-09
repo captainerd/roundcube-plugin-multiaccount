@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'Fiókok';
+$labels['manage_accounts'] = 'Fiókok kezelése';
+$labels['add_account'] = 'Fiók hozzáadása';
+$labels['username_email'] = 'Felhasználónév / E-mail cím';
+$labels['password'] = 'Jelszó';
+$labels['save'] = 'Mentés';
+$labels['cancel'] = 'Mégsem';
+$labels['close'] = 'Bezárás';
+$labels['remember_me'] = 'Emlékezz rám';
+$labels['confirm_delete'] = 'Törli a(z) $email fiókot?';
+$labels['msg_added'] = 'A fiók ellenőrizve és hozzáadva';
+$labels['msg_removed'] = 'A fiók eltávolítva';
+$labels['err_delete_current'] = 'Nem törölheti azt a fiókot, amellyel be van jelentkezve.';
+$labels['err_missing_params'] = 'Hiányzó paraméterek';
+$labels['err_not_found'] = 'A fiók nem található';
+$labels['err_missing_credentials'] = 'Adja meg a felhasználónevet és a jelszót';
+$labels['err_already_self'] = 'Már be van jelentkezve ezzel a fiókkal.';
+$labels['err_exception'] = 'Hiba: ';
+$labels['err_connection'] = 'Kapcsolódási hiba: ';
+$labels['err_already_connected'] = 'Ez a fiók már hozzá van adva.';
+$labels['err_invalid_credentials'] = 'Érvénytelen felhasználónév vagy jelszó';
+$labels['err_no_account'] = 'Nincs megadva fiók';
+$labels['err_password_missing'] = 'A fiók jelszava nem található';
+$labels['err_switch_failed'] = 'A fiókváltás sikertelen';
+$labels['err_validation'] = 'Az ellenőrzés sikertelen';
+$labels['err_request'] = 'A kérés sikertelen. Próbálja újra.';

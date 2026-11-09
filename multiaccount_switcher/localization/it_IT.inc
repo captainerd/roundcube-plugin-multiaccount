@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'Account';
+$labels['manage_accounts'] = 'Gestisci account';
+$labels['add_account'] = 'Aggiungi account';
+$labels['username_email'] = 'Nome Utente / E-Mail';
+$labels['password'] = 'Password';
+$labels['save'] = 'Salva';
+$labels['cancel'] = 'Annulla';
+$labels['close'] = 'Chiudi';
+$labels['remember_me'] = 'Ricordami';
+$labels['confirm_delete'] = 'Eliminare l’account $email?';
+$labels['msg_added'] = 'Account verificato e aggiunto';
+$labels['msg_removed'] = 'Account rimosso';
+$labels['err_delete_current'] = 'Non puoi eliminare l’account con cui hai effettuato l’accesso.';
+$labels['err_missing_params'] = 'Parametri mancanti';
+$labels['err_not_found'] = 'Account non trovato';
+$labels['err_missing_credentials'] = 'Inserisci nome utente e password';
+$labels['err_already_self'] = 'Hai già effettuato l’accesso con questo account.';
+$labels['err_exception'] = 'Errore: ';
+$labels['err_connection'] = 'Errore di connessione: ';
+$labels['err_already_connected'] = 'Questo account è già stato aggiunto.';
+$labels['err_invalid_credentials'] = 'Nome utente o password non validi';
+$labels['err_no_account'] = 'Nessun account specificato';
+$labels['err_password_missing'] = 'Password dell’account non trovata';
+$labels['err_switch_failed'] = 'Impossibile cambiare account';
+$labels['err_validation'] = 'Verifica non riuscita';
+$labels['err_request'] = 'Richiesta non riuscita. Riprova.';

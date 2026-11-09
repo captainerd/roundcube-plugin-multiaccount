@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'Konti';
+$labels['manage_accounts'] = 'Pārvaldīt kontus';
+$labels['add_account'] = 'Pievienot kontu';
+$labels['username_email'] = 'Lietotājvārds / E-pasts';
+$labels['password'] = 'Parole';
+$labels['save'] = 'Saglabāt';
+$labels['cancel'] = 'Atcelt';
+$labels['close'] = 'Aizvērt';
+$labels['remember_me'] = 'Atcerēties mani';
+$labels['confirm_delete'] = 'Dzēst kontu $email?';
+$labels['msg_added'] = 'Konts pārbaudīts un pievienots';
+$labels['msg_removed'] = 'Konts noņemts';
+$labels['err_delete_current'] = 'Nevar dzēst kontu, ar kuru esat pieteicies.';
+$labels['err_missing_params'] = 'Trūkst parametru';
+$labels['err_not_found'] = 'Konts nav atrasts';
+$labels['err_missing_credentials'] = 'Ievadiet lietotājvārdu un paroli';
+$labels['err_already_self'] = 'Jūs jau esat pieteicies ar šo kontu.';
+$labels['err_exception'] = 'Kļūda: ';
+$labels['err_connection'] = 'Savienojuma kļūda: ';
+$labels['err_already_connected'] = 'Šis konts jau ir pievienots.';
+$labels['err_invalid_credentials'] = 'Nepareizs lietotājvārds vai parole';
+$labels['err_no_account'] = 'Konts nav norādīts';
+$labels['err_password_missing'] = 'Konta parole nav atrasta';
+$labels['err_switch_failed'] = 'Neizdevās pārslēgt kontu';
+$labels['err_validation'] = 'Pārbaude neizdevās';
+$labels['err_request'] = 'Pieprasījums neizdevās. Mēģiniet vēlreiz.';

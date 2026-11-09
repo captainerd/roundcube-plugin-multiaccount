@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = '계정';
+$labels['manage_accounts'] = '계정 관리';
+$labels['add_account'] = '계정 추가';
+$labels['username_email'] = '사용자명 / 이메일';
+$labels['password'] = '암호';
+$labels['save'] = '저장';
+$labels['cancel'] = '취소';
+$labels['close'] = '닫기';
+$labels['remember_me'] = '로그인 상태 유지';
+$labels['confirm_delete'] = '$email 계정을 삭제하시겠습니까?';
+$labels['msg_added'] = '계정을 확인하고 추가했습니다';
+$labels['msg_removed'] = '계정을 삭제했습니다';
+$labels['err_delete_current'] = '현재 로그인한 계정은 삭제할 수 없습니다.';
+$labels['err_missing_params'] = '매개변수가 없습니다';
+$labels['err_not_found'] = '계정을 찾을 수 없습니다';
+$labels['err_missing_credentials'] = '사용자 이름과 비밀번호를 입력하세요';
+$labels['err_already_self'] = '이미 이 계정으로 로그인되어 있습니다.';
+$labels['err_exception'] = '오류: ';
+$labels['err_connection'] = '연결 오류: ';
+$labels['err_already_connected'] = '이미 추가된 계정입니다.';
+$labels['err_invalid_credentials'] = '사용자 이름 또는 비밀번호가 올바르지 않습니다';
+$labels['err_no_account'] = '계정이 지정되지 않았습니다';
+$labels['err_password_missing'] = '계정 비밀번호를 찾을 수 없습니다';
+$labels['err_switch_failed'] = '계정을 전환하지 못했습니다';
+$labels['err_validation'] = '확인에 실패했습니다';
+$labels['err_request'] = '요청에 실패했습니다. 다시 시도하세요.';

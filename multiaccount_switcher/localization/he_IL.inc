@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'חשבונות';
+$labels['manage_accounts'] = 'ניהול חשבונות';
+$labels['add_account'] = 'הוספת חשבון';
+$labels['username_email'] = 'שם משתמש / כתובת דוא"ל';
+$labels['password'] = 'סיסמה';
+$labels['save'] = 'שמירה';
+$labels['cancel'] = 'ביטול';
+$labels['close'] = 'סגירה';
+$labels['remember_me'] = 'זכור אותי';
+$labels['confirm_delete'] = 'למחוק את החשבון $email?';
+$labels['msg_added'] = 'החשבון אומת ונוסף';
+$labels['msg_removed'] = 'החשבון הוסר';
+$labels['err_delete_current'] = 'לא ניתן למחוק את החשבון שאיתו התחברת.';
+$labels['err_missing_params'] = 'חסרים פרמטרים';
+$labels['err_not_found'] = 'החשבון לא נמצא';
+$labels['err_missing_credentials'] = 'יש להזין שם משתמש וסיסמה';
+$labels['err_already_self'] = 'כבר התחברת עם חשבון זה.';
+$labels['err_exception'] = 'שגיאה: ';
+$labels['err_connection'] = 'שגיאת חיבור: ';
+$labels['err_already_connected'] = 'חשבון זה כבר נוסף.';
+$labels['err_invalid_credentials'] = 'שם משתמש או סיסמה שגויים';
+$labels['err_no_account'] = 'לא צוין חשבון';
+$labels['err_password_missing'] = 'סיסמת החשבון לא נמצאה';
+$labels['err_switch_failed'] = 'החלפת החשבון נכשלה';
+$labels['err_validation'] = 'האימות נכשל';
+$labels['err_request'] = 'הבקשה נכשלה. נסה שוב.';

@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'Kontoer';
+$labels['manage_accounts'] = 'Administrer kontoer';
+$labels['add_account'] = 'Legg til konto';
+$labels['username_email'] = 'Brukernavn / E-post';
+$labels['password'] = 'Passord';
+$labels['save'] = 'Lagre';
+$labels['cancel'] = 'Avbryt';
+$labels['close'] = 'Lukk';
+$labels['remember_me'] = 'Husk meg';
+$labels['confirm_delete'] = 'Slette kontoen $email?';
+$labels['msg_added'] = 'Kontoen er bekreftet og lagt til';
+$labels['msg_removed'] = 'Kontoen er fjernet';
+$labels['err_delete_current'] = 'Du kan ikke slette kontoen du er logget inn med.';
+$labels['err_missing_params'] = 'Manglende parametere';
+$labels['err_not_found'] = 'Fant ikke kontoen';
+$labels['err_missing_credentials'] = 'Skriv inn brukernavn og passord';
+$labels['err_already_self'] = 'Du er allerede logget inn med denne kontoen.';
+$labels['err_exception'] = 'Feil: ';
+$labels['err_connection'] = 'Tilkoblingsfeil: ';
+$labels['err_already_connected'] = 'Denne kontoen er allerede lagt til.';
+$labels['err_invalid_credentials'] = 'Ugyldig brukernavn eller passord';
+$labels['err_no_account'] = 'Ingen konto angitt';
+$labels['err_password_missing'] = 'Fant ikke passordet for kontoen';
+$labels['err_switch_failed'] = 'Kunne ikke bytte konto';
+$labels['err_validation'] = 'Bekreftelsen mislyktes';
+$labels['err_request'] = 'Forespørselen mislyktes. Prøv igjen.';

@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'Konton';
+$labels['manage_accounts'] = 'Hantera konton';
+$labels['add_account'] = 'Lägg till konto';
+$labels['username_email'] = 'Användarnamn / Mailadress';
+$labels['password'] = 'Lösenord';
+$labels['save'] = 'Spara';
+$labels['cancel'] = 'Avbryt';
+$labels['close'] = 'Stäng';
+$labels['remember_me'] = 'Kom ihåg mig';
+$labels['confirm_delete'] = 'Ta bort kontot $email?';
+$labels['msg_added'] = 'Kontot har verifierats och lagts till';
+$labels['msg_removed'] = 'Kontot har tagits bort';
+$labels['err_delete_current'] = 'Du kan inte ta bort kontot som du är inloggad med.';
+$labels['err_missing_params'] = 'Parametrar saknas';
+$labels['err_not_found'] = 'Kontot hittades inte';
+$labels['err_missing_credentials'] = 'Ange användarnamn och lösenord';
+$labels['err_already_self'] = 'Du är redan inloggad med det här kontot.';
+$labels['err_exception'] = 'Fel: ';
+$labels['err_connection'] = 'Anslutningsfel: ';
+$labels['err_already_connected'] = 'Det här kontot är redan tillagt.';
+$labels['err_invalid_credentials'] = 'Ogiltigt användarnamn eller lösenord';
+$labels['err_no_account'] = 'Inget konto angivet';
+$labels['err_password_missing'] = 'Kontots lösenord hittades inte';
+$labels['err_switch_failed'] = 'Det gick inte att byta konto';
+$labels['err_validation'] = 'Verifieringen misslyckades';
+$labels['err_request'] = 'Begäran misslyckades. Försök igen.';

@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'Tài khoản';
+$labels['manage_accounts'] = 'Quản lý tài khoản';
+$labels['add_account'] = 'Thêm tài khoản';
+$labels['username_email'] = 'Tên đăng nhập / Thư điện tử';
+$labels['password'] = 'Mật khẩu';
+$labels['save'] = 'Lưu';
+$labels['cancel'] = 'Huỷ';
+$labels['close'] = 'Đóng';
+$labels['remember_me'] = 'Ghi nhớ đăng nhập';
+$labels['confirm_delete'] = 'Xóa tài khoản $email?';
+$labels['msg_added'] = 'Đã xác minh và thêm tài khoản';
+$labels['msg_removed'] = 'Đã xóa tài khoản';
+$labels['err_delete_current'] = 'Không thể xóa tài khoản bạn đang đăng nhập.';
+$labels['err_missing_params'] = 'Thiếu tham số';
+$labels['err_not_found'] = 'Không tìm thấy tài khoản';
+$labels['err_missing_credentials'] = 'Vui lòng nhập tên người dùng và mật khẩu';
+$labels['err_already_self'] = 'Bạn đã đăng nhập bằng tài khoản này.';
+$labels['err_exception'] = 'Lỗi: ';
+$labels['err_connection'] = 'Lỗi kết nối: ';
+$labels['err_already_connected'] = 'Tài khoản này đã được thêm.';
+$labels['err_invalid_credentials'] = 'Tên người dùng hoặc mật khẩu không hợp lệ';
+$labels['err_no_account'] = 'Chưa chỉ định tài khoản';
+$labels['err_password_missing'] = 'Không tìm thấy mật khẩu tài khoản';
+$labels['err_switch_failed'] = 'Không thể chuyển tài khoản';
+$labels['err_validation'] = 'Xác minh thất bại';
+$labels['err_request'] = 'Yêu cầu thất bại. Vui lòng thử lại.';

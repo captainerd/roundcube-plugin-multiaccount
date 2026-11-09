@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = '账户';
+$labels['manage_accounts'] = '管理账户';
+$labels['add_account'] = '添加账户';
+$labels['username_email'] = '用户名 / 邮件地址';
+$labels['password'] = '密码';
+$labels['save'] = '保存';
+$labels['cancel'] = '取消';
+$labels['close'] = '关闭';
+$labels['remember_me'] = '记住我';
+$labels['confirm_delete'] = '删除账户 $email？';
+$labels['msg_added'] = '账户已验证并添加';
+$labels['msg_removed'] = '账户已移除';
+$labels['err_delete_current'] = '无法删除当前登录的账户。';
+$labels['err_missing_params'] = '缺少参数';
+$labels['err_not_found'] = '未找到账户';
+$labels['err_missing_credentials'] = '请输入用户名和密码';
+$labels['err_already_self'] = '您已使用此账户登录。';
+$labels['err_exception'] = '错误：';
+$labels['err_connection'] = '连接错误：';
+$labels['err_already_connected'] = '此账户已添加。';
+$labels['err_invalid_credentials'] = '用户名或密码无效';
+$labels['err_no_account'] = '未指定账户';
+$labels['err_password_missing'] = '未找到账户密码';
+$labels['err_switch_failed'] = '切换账户失败';
+$labels['err_validation'] = '验证失败';
+$labels['err_request'] = '请求失败，请重试。';

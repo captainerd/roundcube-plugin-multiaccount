@@ -69,6 +69,23 @@ class Utils
         return hash_hmac('sha256', strtolower(trim($username)) . $fingerprint, $this->key, true);
     }
 
+    // Session cookie value: username encrypted with a browser-bound key, so it cannot be forged
+    public function encode_session(string $username): string
+    {
+        $key = $this->derive_key('multiaccount_session');
+        return base64_encode($this->encrypt_password(strtolower(trim($username)), $key));
+    }
+
+    public function decode_session(string $value): ?string
+    {
+        $encrypted = base64_decode($value, true);
+        if ($encrypted === false) {
+            return null;
+        }
+        $username = $this->decrypt_password($encrypted, $this->derive_key('multiaccount_session'));
+        return $username ? strtolower(trim($username)) : null;
+    }
+
     public function store_usercookie(string $username, string $password): void
     {
         $username = strtolower(trim($username));
@@ -130,6 +147,12 @@ class Utils
 
         $data = json_decode($json, true);
         if (!is_array($data) || empty($data['connections'])) {
+            return [];
+        }
+
+        // The list belongs to the accounts in it: hide it from anyone else using this browser
+        $current = strtolower(trim((string) $this->get_current_username()));
+        if (!in_array($current, $data['connections'], true)) {
             return [];
         }
 

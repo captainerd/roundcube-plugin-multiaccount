@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'Accounts';
+$labels['manage_accounts'] = 'Accounts beheren';
+$labels['add_account'] = 'Account toevoegen';
+$labels['username_email'] = 'Gebruikersnaam / E-mail';
+$labels['password'] = 'Wachtwoord';
+$labels['save'] = 'Opslaan';
+$labels['cancel'] = 'Annuleren';
+$labels['close'] = 'Sluit';
+$labels['remember_me'] = 'Onthoud mij';
+$labels['confirm_delete'] = 'Account $email verwijderen?';
+$labels['msg_added'] = 'Account gecontroleerd en toegevoegd';
+$labels['msg_removed'] = 'Account verwijderd';
+$labels['err_delete_current'] = 'Je kunt het account waarmee je bent ingelogd niet verwijderen.';
+$labels['err_missing_params'] = 'Ontbrekende parameters';
+$labels['err_not_found'] = 'Account niet gevonden';
+$labels['err_missing_credentials'] = 'Voer gebruikersnaam en wachtwoord in';
+$labels['err_already_self'] = 'Je bent al ingelogd met dit account.';
+$labels['err_exception'] = 'Fout: ';
+$labels['err_connection'] = 'Verbindingsfout: ';
+$labels['err_already_connected'] = 'Dit account is al toegevoegd.';
+$labels['err_invalid_credentials'] = 'Ongeldige gebruikersnaam of wachtwoord';
+$labels['err_no_account'] = 'Geen account opgegeven';
+$labels['err_password_missing'] = 'Wachtwoord van account niet gevonden';
+$labels['err_switch_failed'] = 'Wisselen van account mislukt';
+$labels['err_validation'] = 'Controle mislukt';
+$labels['err_request'] = 'Verzoek mislukt. Probeer het opnieuw.';

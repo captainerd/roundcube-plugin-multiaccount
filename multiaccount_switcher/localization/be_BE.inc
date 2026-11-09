@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'Уліковыя запісы';
+$labels['manage_accounts'] = 'Кіраванне ўліковымі запісамі';
+$labels['add_account'] = 'Дадаць уліковы запіс';
+$labels['username_email'] = 'Імя карыстальніка / Эл. пошта';
+$labels['password'] = 'Пароль';
+$labels['save'] = 'Захаваць';
+$labels['cancel'] = 'Скасаваць';
+$labels['close'] = 'Закрыць';
+$labels['remember_me'] = 'Запомніць мяне';
+$labels['confirm_delete'] = 'Выдаліць уліковы запіс $email?';
+$labels['msg_added'] = 'Уліковы запіс правераны і дададзены';
+$labels['msg_removed'] = 'Уліковы запіс выдалены';
+$labels['err_delete_current'] = 'Нельга выдаліць уліковы запіс, пад якім вы ўвайшлі.';
+$labels['err_missing_params'] = 'Не хапае параметраў';
+$labels['err_not_found'] = 'Уліковы запіс не знойдзены';
+$labels['err_missing_credentials'] = 'Увядзіце імя карыстальніка і пароль';
+$labels['err_already_self'] = 'Вы ўжо ўвайшлі пад гэтым уліковым запісам.';
+$labels['err_exception'] = 'Памылка: ';
+$labels['err_connection'] = 'Памылка злучэння: ';
+$labels['err_already_connected'] = 'Гэты ўліковы запіс ужо дададзены.';
+$labels['err_invalid_credentials'] = 'Няправільнае імя карыстальніка або пароль';
+$labels['err_no_account'] = 'Уліковы запіс не пазначаны';
+$labels['err_password_missing'] = 'Пароль уліковага запісу не знойдзены';
+$labels['err_switch_failed'] = 'Не ўдалося пераключыць уліковы запіс';
+$labels['err_validation'] = 'Праверка не пройдзена';
+$labels['err_request'] = 'Запыт не выкананы. Паспрабуйце яшчэ раз.';

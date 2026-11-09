@@ -1,0 +1,29 @@
+<?php
+
+$labels = [];
+$labels['accounts'] = 'Računi';
+$labels['manage_accounts'] = 'Upravljanje računov';
+$labels['add_account'] = 'Dodaj račun';
+$labels['username_email'] = 'Uporabniško ime / E-Pošta';
+$labels['password'] = 'Geslo';
+$labels['save'] = 'Shrani';
+$labels['cancel'] = 'Prekliči';
+$labels['close'] = 'Zapri';
+$labels['remember_me'] = 'Zapomni si me';
+$labels['confirm_delete'] = 'Izbrišem račun $email?';
+$labels['msg_added'] = 'Račun je preverjen in dodan';
+$labels['msg_removed'] = 'Račun je odstranjen';
+$labels['err_delete_current'] = 'Računa, s katerim ste prijavljeni, ni mogoče izbrisati.';
+$labels['err_missing_params'] = 'Manjkajo parametri';
+$labels['err_not_found'] = 'Računa ni mogoče najti';
+$labels['err_missing_credentials'] = 'Vnesite uporabniško ime in geslo';
+$labels['err_already_self'] = 'S tem računom ste že prijavljeni.';
+$labels['err_exception'] = 'Napaka: ';
+$labels['err_connection'] = 'Napaka povezave: ';
+$labels['err_already_connected'] = 'Ta račun je že dodan.';
+$labels['err_invalid_credentials'] = 'Napačno uporabniško ime ali geslo';
+$labels['err_no_account'] = 'Račun ni naveden';
+$labels['err_password_missing'] = 'Gesla računa ni mogoče najti';
+$labels['err_switch_failed'] = 'Preklop računa ni uspel';
+$labels['err_validation'] = 'Preverjanje ni uspelo';
+$labels['err_request'] = 'Zahteva ni uspela. Poskusite znova.';

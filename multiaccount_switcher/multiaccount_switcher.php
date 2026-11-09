@@ -13,7 +13,7 @@
 class multiaccount_switcher extends rcube_plugin
 {
 
-    public $task = 'login|mail'; // Hook into login and mail tasks 
+    public $task = 'login|logout|mail'; // Hook into login, logout and mail tasks 
     private $key; // encryption key
     private $utils;
 
@@ -40,11 +40,26 @@ class multiaccount_switcher extends rcube_plugin
         $switcher = new AccountSwitcher($this, $this->key, $this->utils);
 
         $this->load_config();
+        $this->add_texts('localization/', true);
+
+        // "Accounts" item in the main menu, easy to reach on mobile
+        if ($rcmail->task == 'mail' && empty($rcmail->action)) {
+            $this->add_button([
+                'type' => 'link',
+                'href' => '#',
+                'id' => 'multiaccount-menu',
+                'class' => 'multiaccount',
+                'innerclass' => 'inner',
+                'label' => 'accounts',
+                'title' => 'manage_accounts',
+                'domain' => $this->ID,
+            ], 'taskbar');
+        }
 
         $this->add_hook('render_page', [$switcher, 'add_account_switcher']);
         $this->add_hook('authenticate', [$this, 'on_authenticate']);
         $this->add_hook('startup', [$this, 'on_startup']);
-        $this->add_hook('logout_before', [$this, 'on_logout']);
+        $this->add_hook('logout_after', [$this, 'on_logout']);
 
         $this->register_action('plugin.multiaccount_switcher.switch', [$switcher, 'switch_account']);
         $this->register_action('plugin.multiaccount_switcher.validate_account', [$this, 'validate_account']);
@@ -56,10 +71,14 @@ class multiaccount_switcher extends rcube_plugin
     public function on_logout($args)
     {
 
-        // Delete the multiaccount_session cookie by setting expiration to past
-        if (isset($_COOKIE['multiaccount_session'])) {
-            setcookie('multiaccount_session', '', time() - 3600, '/');
-            unset($_COOKIE['multiaccount_session']);
+        // Logged in with "Remember me" (trusted device): end the session only, keep stored accounts.
+        // Otherwise delete all plugin cookies (session, stored passwords, connections)
+        $trusted = !empty($_COOKIE['multiaccount_session']) && $this->utils->decode_session($_COOKIE['multiaccount_session']);
+        foreach (array_keys($_COOKIE) as $name) {
+            if (strpos($name, 'multiaccount_') === 0 && (!$trusted || $name === 'multiaccount_session')) {
+                $this->utils->set_persistent_cookie($name, '', time() - 3600);
+                unset($_COOKIE[$name]);
+            }
         }
         return $args;
     }
@@ -72,7 +91,7 @@ class multiaccount_switcher extends rcube_plugin
         if ($email === $current_user) {
             $this->utils->send_json_response([
                 'status' => 'error',
-                'message' => "You cannot delete the account you're logged in with."
+                'message' => $this->gettext('err_delete_current')
             ]);
             return;
         }
@@ -80,7 +99,7 @@ class multiaccount_switcher extends rcube_plugin
         if (empty($email) || empty($current_user)) {
             $this->utils->send_json_response([
                 'status' => 'error',
-                'message' => 'Missing parameters'
+                'message' => $this->gettext('err_missing_params')
             ]);
             return;
         }
@@ -102,10 +121,13 @@ class multiaccount_switcher extends rcube_plugin
         if (!$found) {
             $this->utils->send_json_response([
                 'status' => 'error',
-                'message' => 'Connection not found'
+                'message' => $this->gettext('err_not_found')
             ]);
             return;
         }
+
+        // Forget the stored password of the removed account
+        $this->utils->set_persistent_cookie('multiaccount_' . hash('sha256', $email), '', time() - 3600);
 
         $data = ['connections' => $new_connections];
         $json = json_encode($data);
@@ -120,7 +142,7 @@ class multiaccount_switcher extends rcube_plugin
 
         $this->utils->send_json_response([
             'status' => 'success',
-            'message' => 'Account decoupled successfully'
+            'message' => $this->gettext('msg_removed')
         ]);
     }
 
@@ -137,7 +159,7 @@ class multiaccount_switcher extends rcube_plugin
         if (!$username || !$password) {
             $this->utils->send_json_response([
                 'status' => 'error',
-                'message' => 'Missing username or password'
+                'message' => $this->gettext('err_missing_credentials')
             ]);
             return;
         }
@@ -147,7 +169,7 @@ class multiaccount_switcher extends rcube_plugin
         if (strcasecmp(trim($username), trim($current_email)) === 0) {
             $this->utils->send_json_response([
                 'status' => 'error',
-                'message' => 'You are already yourself.'
+                'message' => $this->gettext('err_already_self')
             ]);
             return;
         }
@@ -186,7 +208,7 @@ class multiaccount_switcher extends rcube_plugin
             restore_error_handler();
             $this->utils->send_json_response([
                 'status' => 'error',
-                'message' => 'Exception: ' . $e->getMessage()
+                'message' => $this->gettext('err_exception') . $e->getMessage()
             ]);
             return;
         }
@@ -196,7 +218,7 @@ class multiaccount_switcher extends rcube_plugin
         if ($error_msg) {
             $this->utils->send_json_response([
                 'status' => 'error',
-                'message' => 'Connection error: ' . $error_msg
+                'message' => $this->gettext('err_connection') . $error_msg
             ]);
         } elseif ($connected) {
             $imap->close();
@@ -208,7 +230,7 @@ class multiaccount_switcher extends rcube_plugin
             if ($this->connection_exists($current_email, $username)) {
                 $this->utils->send_json_response([
                     'status' => 'error',
-                    'message' => 'You are already connected to this account.'
+                    'message' => $this->gettext('err_already_connected')
                 ]);
                 return;
             }
@@ -220,7 +242,7 @@ class multiaccount_switcher extends rcube_plugin
         } else {
             $this->utils->send_json_response([
                 'status' => 'error',
-                'message' => 'Invalid username or password'
+                'message' => $this->gettext('err_invalid_credentials')
             ]);
         }
     }
@@ -232,6 +254,12 @@ class multiaccount_switcher extends rcube_plugin
         $username = strtolower(trim($username));
 
         $this->utils->store_usercookie($username, $password);
+
+        // Store the current account too, so it is possible to switch back to it
+        $current_password = rcube::get_instance()->get_user_password();
+        if ($current_email && $current_password) {
+            $this->utils->store_usercookie($current_email, $current_password);
+        }
 
         $connections = $this->utils->get_connections();
 
@@ -317,9 +345,9 @@ class multiaccount_switcher extends rcube_plugin
         // Auto-auth from persistent session cookie
         $cookie = $_COOKIE['multiaccount_session'] ?? null;
         if (!empty($cookie) && (empty($args['user']) || empty($args['pass']))) {
-            $username = strtolower(trim($cookie));
+            $username = $this->utils->decode_session($cookie);
 
-            $password = $this->utils->get_decrypted_password_for_user($username);
+            $password = $username ? $this->utils->get_decrypted_password_for_user($username) : null;
             if (!empty($password)) {
                 $args['host'] = $rcmail->config->get('imap_host');
                 $args['user'] = $username;
@@ -339,7 +367,7 @@ class multiaccount_switcher extends rcube_plugin
 
         if ($rememberme) {
 
-            $this->utils->set_persistent_cookie('multiaccount_session', $username, time() + (10 * 365 * 24 * 60 * 60));
+            $this->utils->set_persistent_cookie('multiaccount_session', $this->utils->encode_session($username), time() + (10 * 365 * 24 * 60 * 60));
             $this->utils->store_usercookie($username, $password);
         }
 
