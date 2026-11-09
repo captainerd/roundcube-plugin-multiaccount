@@ -1,4 +1,27 @@
- 
+ What else is new in v2 (Latest Update: Merge pull request #6 from ghzserg/main)
+
+    🌍 Full Localization (45+ Languages):
+
+        The plugin is now fully translation-ready using Roundcube’s native localization system. All interface text, success/error messages, and confirmation prompts can now be localized.
+
+    📱 Taskbar Menu Integration:
+
+        Added a sleek, quick-access "Accounts" button directly to the Roundcube mail taskbar, making it much easier to switch or manage accounts on both desktop and mobile views.
+
+    🛡️ Advanced Security Hardening & Session Isolation:
+
+        Browser-Bound Session Tokens: Persistent login sessions (multiaccount_session) are now cryptographically encoded to prevent session forgery or tampering.
+
+        Strict Account Authorization Guard: Added an explicit check against the authorized connection list in switch_account() to block switching attempts to unlinked accounts early.
+
+        Shared Workstation Protection: Implemented strict access controls so that if multiple users share the same browser or computer, one user cannot view or access another user's linked account list.
+
+        Clean Session Management: Automatic session clearing (kill_session()) upon switching prevents folder caches, search states, and data from leaking between accounts.
+
+    🔧 Trusted-Device & Logout Refactoring:
+
+        Refactored logout behavior to cleanly separate standard logouts (which wipe plugin cookies for privacy) from trusted "Remember me" sessions (which safely preserve linked accounts).
+        
 # v2 roundcube-plugin-multiaccount\_switcher
 
 ### Summary
